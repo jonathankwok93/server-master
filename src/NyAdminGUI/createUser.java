@@ -100,9 +100,9 @@ public class createUser extends JFrame {
 				String passwordRepeat = passwordFieldRepeat.getText();
 				String password = passwordField.getText();
 				String username = textField.getText();
-					
+	
 					try {
-						if (Logic.createUser(username, password, passwordRepeat))
+						if(Logic.createUser(username, password, passwordRepeat))
 						{
 							System.out.println("hej");
 							dispose(); //Close window and return to menu
