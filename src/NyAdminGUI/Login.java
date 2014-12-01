@@ -53,10 +53,6 @@ public class Login extends JFrame {
 		lblAdministratorBrugerMenu.setBounds(6, 16, 205, 16);
 		contentPane.add(lblAdministratorBrugerMenu);
 		
-		JLabel lblErDuIkke = new JLabel("Er du ikke administrator skal du gå væk");
-		lblErDuIkke.setBounds(6, 44, 265, 16);
-		contentPane.add(lblErDuIkke);
-		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override

@@ -1,7 +1,6 @@
 package NyAdminGUI;
 
 import java.util.Calendar;
-
 import java.sql.*;
 
 //import jdk.nashorn.internal.runtime.ECMAException;
@@ -22,27 +21,68 @@ public class Logic {
 		
 	}
 	
-	public static boolean createUser(String username, String password, String passwordRepeat){
+	//Indsæt metode til at verificere at brugeren er blevet oprettet.
+	//	SwitchMethods SW = new SwitchMethods();
+	//if(SW.createuser(username, password))
+//	if(true)
+//	{
 	
-		if(password.equals(passwordRepeat)){
+	public static boolean createUser(String username, String password, String passwordRepeat) 
+	{
+	
+//		SwitchMethods SW = new SwitchMethods();
 		
-		SwitchMethods SW = new SwitchMethods();
-		//if(SW.createuser(username, password))
-			if(true)
-			{
-			errorMessage userCreated = new errorMessage("The user " + username + " has been created succesfully");
+		if(password.equals(passwordRepeat))
+		{
+			errorMessage userCreated = new errorMessage("The user " + username + " 11has been created succesfully");
 			userCreated.setVisible(true);
+//			if (SW.createuser(username, password))
+//			{
+//				System.out.println("Hej");
+//			}
+//			else
+//			{
+//				System.out.println("Nej");
+//			}
 			return true;
-			}
-		
-		else{
-			errorMessage passwordnotmatch = new errorMessage("The two passwords does not match!");
-			return false;
 		}
+		
+		else
+		{
+			errorMessage passwordDoesNotMatch = new errorMessage("The passwords does not match");
+			passwordDoesNotMatch.setVisible(true);
+			return false;
 		}
 		
 	}
 
+	
+	
+//	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException{
+//		SwitchMethods SW = new SwitchMethods();
+//
+//		if(password.equals(passwordRepeat) && SW.createuser(username, password))
+//		{
+//			errorMessage userCreated = new errorMessage("The user " + username + " has been created succesfully");
+//			userCreated.setVisible(true);
+//			return true;
+//		}
+//		else if (!password.equals(passwordRepeat))
+//		{
+//			errorMessage passwordDoesNotMatch = new errorMessage("The passwords does not match");
+//			passwordDoesNotMatch.setVisible(true);
+//			return false;
+//		}
+//		else
+//		{
+//			errorMessage passwordDoesNotMatch = new errorMessage("Something went wrong.");
+//			passwordDoesNotMatch.setVisible(true);
+//			return false;
+//		}
+//
+//		
+//	}
+	
 	public static void removeEvent(String removeEventID){
 		
 		//Event should be removed here
