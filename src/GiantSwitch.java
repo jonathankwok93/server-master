@@ -1,11 +1,17 @@
 import java.sql.SQLException;
 
+import model.Forecast.ForecastModel;
+import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
 import model.calendar.Event;
+import model.calendar.GetCalendarData;
+import model.calendar.cbsevent;
 import model.note.Note;
 import JsonClasses.CalendarInfo;
 import JsonClasses.CreateCalender;
 import JsonClasses.DeleteCalender;
+import JsonClasses.createEvent;
+import JsonClasses.getEvents;
 
 import com.google.gson.*;
 
@@ -71,22 +77,33 @@ public class GiantSwitch {
 			
 		case "getCalender":
 			System.out.println("Recieved getCalender");
+			CalendarInfo ci = (CalendarInfo)gson.fromJson(jsonString, CalendarInfo.class);
+			answer = SW.getCalendar(ci.getCalenderName());
 			break;
 
 		case "getEvents":
 			System.out.println("Recieved getEvents");
+//			cbsevent ev = (cbsevent)gson.fromJson(jsonString, cbsevent.class);
+//			GetCalendarData getcalendardata = new GetCalendarData();
+//			answer = getcalendardata.getuserevents(ev.getusername());
 			break;
 
 		case "createEvent":
-			System.out.println("Recieved saveEvent");
+			System.out.println("Recieved createEvent");
+			createEvent ce = (createEvent)gson.fromJson(jsonString, createEvent.class);
+			answer = SW.createEvent( ce.gettype(), ce.getLocation(), ce.getCreatedby(), ce.getStartTime(), ce.getEndTime(), ce.getname(), ce.gettext(), ce.getcustomevent(), ce.getCalendarID());
 			break;
 
 		case "getEventInfo":
 			System.out.println("Recieved getEventInfo");
+			getEvents get = (getEvents)gson.fromJson(jsonString, getEvents.class);
+		    answer = SW.getEvent(get.getCalendarID());
 			break;
 			
 		case "deleteEvent":
 			System.out.println("Recieved deleteEvent");
+			getEvents det = (getEvents)gson.fromJson(jsonString, getEvents.class);
+			answer = SW.deleteEvent(det.geteventID());
 		
 		case "saveNote":
 			System.out.println("Recieved saveNote");
@@ -107,9 +124,8 @@ public class GiantSwitch {
 
 			try {
 				answer = QOTDKlasse.getQuote();
-				answer = "";
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 			System.out.println(answer);
@@ -122,6 +138,8 @@ public class GiantSwitch {
 
 		case "getClientForecast":
 			System.out.println("Recieved getClientForecast");
+			ForecastTest forecast = new ForecastTest();
+			answer = forecast.getTodayForecast();
 			break;
 		
 		default:

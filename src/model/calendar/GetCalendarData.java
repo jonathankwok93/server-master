@@ -12,7 +12,8 @@ import java.net.URL;
 public class GetCalendarData {
 	
 	EncryptUserID e = new EncryptUserID();
-
+	
+	
 	//henter data fra URL og l??er ind til en string
     private static String readUrl(String urlString) throws Exception {
         BufferedReader reader = null;
