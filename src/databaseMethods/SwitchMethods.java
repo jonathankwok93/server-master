@@ -100,16 +100,16 @@ public class SwitchMethods extends Model
 			
 	}
 	
-	public boolean createEvent(String type, String location, String createdby, String startTime,
+	public String createEvent(String type, String location, String createdby, String startTime,
 			String endTime, String name, String text, String customEvent, String CalendarID) throws SQLException
 			{
 		String[] keys = {"type", "location", "createdby", "startTime", "endTime", "name", 
 				"text", "customEvent", "CalendarID"};
 		String[] values = {type, location, createdby, startTime, endTime, name, text, customEvent, CalendarID};
 		if(qb.insertInto("events", keys).values(values).Execute()){
-			return true;
+			return "Success";
 			}else{
-				return false;
+				return "Error";
 			}
 		}
 	
