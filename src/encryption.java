@@ -12,6 +12,7 @@ public class encryption {
 		//The 4 lines below needs to work later on, but for now, it will be hardcode
 		//System.out.println(CF.getFfcryptkey());
 		System.out.println(CF.getFfcryptkey());
+		System.out.println("test");
 		String crypKey = CF.getFfcryptkey();
 		System.out.println(crypKey);
 		double gladKo = Double.parseDouble(crypKey);

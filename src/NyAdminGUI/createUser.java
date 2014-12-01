@@ -104,6 +104,7 @@ public class createUser extends JFrame {
 					try {
 						if(Logic.createUser(username, password, passwordRepeat))
 						{
+							System.out.println("password = " + password);
 							System.out.println("hej");
 							dispose(); //Close window and return to menu
 						}

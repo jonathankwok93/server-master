@@ -31,12 +31,12 @@ public class Logic {
 	{
 	
 		SwitchMethods SW = new SwitchMethods();
-		
+		SW.createuser(username, password);
+
 		if(password.equals(passwordRepeat))
 		{
 			errorMessage userCreated = new errorMessage("The user " + username + " 11has been created succesfully");
 			userCreated.setVisible(true);
-			SW.createuser(username, password);
 			return true;
 		}
 		
