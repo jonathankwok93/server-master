@@ -28,15 +28,15 @@ public class errorMessage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnYesSir = new JButton("Yes sir!");
-		btnYesSir.addMouseListener(new MouseAdapter() {
+		JButton btnOk = new JButton("OK");
+		btnOk.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 			}
 		});
-		btnYesSir.setBounds(166, 221, 117, 29);
-		contentPane.add(btnYesSir);
+		btnOk.setBounds(166, 221, 117, 29);
+		contentPane.add(btnOk);
 		
 		JLabel errorMessageLabel = new JLabel(errorMessage);
 		errorMessageLabel.setFont(new Font("Lucida Grande", Font.BOLD, 13));
@@ -44,9 +44,9 @@ public class errorMessage extends JFrame {
 		errorMessageLabel.setBounds(6, 102, 438, 61);
 		contentPane.add(errorMessageLabel);
 		
-		JLabel lblSpecialMessageFor = new JLabel("Special message for you!");
-		lblSpecialMessageFor.setBounds(6, 26, 182, 16);
-		contentPane.add(lblSpecialMessageFor);
+		JLabel lblErrorMessage = new JLabel("Error message: ");
+		lblErrorMessage.setBounds(6, 26, 182, 16);
+		contentPane.add(lblErrorMessage);
 	}
 
 }

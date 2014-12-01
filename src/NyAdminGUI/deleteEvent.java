@@ -52,7 +52,7 @@ public class deleteEvent extends JFrame {
 		lblSearchEvent.setBounds(19, 70, 129, 16);
 		contentPane.add(lblSearchEvent);
 		
-		JButton btnSearch = new JButton("Search and destroy");
+		JButton btnSearch = new JButton("Search and remove");
 		btnSearch.setBounds(226, 93, 206, 29);
 		contentPane.add(btnSearch);
 		

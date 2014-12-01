@@ -1,9 +1,10 @@
 package NyAdminGUI;
 
 import java.util.Calendar;
+
 import java.sql.*;
 
-import jdk.nashorn.internal.runtime.ECMAException;
+//import jdk.nashorn.internal.runtime.ECMAException;
 import databaseMethods.SwitchMethods;
 
 public class Logic {
@@ -26,25 +27,20 @@ public class Logic {
 		if(password.equals(passwordRepeat)){
 		
 		SwitchMethods SW = new SwitchMethods();
-		try{
 		//if(SW.createuser(username, password))
 			if(true)
-		{
+			{
 			errorMessage userCreated = new errorMessage("The user " + username + " has been created succesfully");
 			userCreated.setVisible(true);
 			return true;
-			
-		}
+			}
 		
-		}catch (Exception e){
-			e.printStackTrace();
-			return false;
-		}
-		return false;
-		}else{
+		else{
 			errorMessage passwordnotmatch = new errorMessage("The two passwords does not match!");
 			return false;
 		}
+		}
+		
 	}
 
 	public static void removeEvent(String removeEventID){
