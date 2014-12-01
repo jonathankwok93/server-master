@@ -90,8 +90,9 @@ public class GiantSwitch {
 
 		case "createEvent":
 			System.out.println("Recieved createEvent");
-			createEvent ce = (createEvent)gson.fromJson(jsonString, createEvent.class);
-			answer = SW.createEvent( ce.gettype(), ce.getLocation(), ce.getCreatedby(), ce.getStartTime(), ce.getEndTime(), ce.getname(), ce.gettext(), ce.getcustomevent(), ce.getCalendarID());
+			createEvent ce1 = (createEvent)gson.fromJson(jsonString, createEvent.class);
+			//answer = SW.createEvent( ce1.gettype(), ce1.getLocation(), ce1.getCreatedby(), ce1.getStartTime(), ce1.getEndTime(), ce1.getName(), ce1.getText(), ce1.getCustomevent(), ce1.getCalendarID());
+			answer = "";
 			break;
 
 		case "getEventInfo":
@@ -103,7 +104,7 @@ public class GiantSwitch {
 		case "deleteEvent":
 			System.out.println("Recieved deleteEvent");
 			getEvents det = (getEvents)gson.fromJson(jsonString, getEvents.class);
-			answer = SW.deleteEvent(det.geteventID());
+			answer = Integer.toString((int) SW.deleteEvent(det.geteventID())).toString();
 		
 		case "saveNote":
 			System.out.println("Recieved saveNote");
@@ -139,7 +140,7 @@ public class GiantSwitch {
 		case "getClientForecast":
 			System.out.println("Recieved getClientForecast");
 			ForecastTest forecast = new ForecastTest();
-			answer = forecast.getTodayForecast();
+		//	answer = forecast.getForecast();
 			break;
 		
 		default:

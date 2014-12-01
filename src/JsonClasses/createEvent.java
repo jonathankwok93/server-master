@@ -2,7 +2,7 @@ package JsonClasses;
 
 public class createEvent {
 
-	private final Long seriealVersion = 1L;
+	private final Long seriealVersion = 2L;
 	private String overallID = "createEvent";
 	private String name;
 	private String text;
@@ -84,6 +84,10 @@ public class createEvent {
 	}
 	public Long getSeriealVersion() {
 		return seriealVersion;
+	}
+	public String gettype() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
