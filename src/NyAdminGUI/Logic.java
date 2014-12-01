@@ -27,23 +27,16 @@ public class Logic {
 //	if(true)
 //	{
 	
-	public static boolean createUser(String username, String password, String passwordRepeat) 
+	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException 
 	{
 	
-//		SwitchMethods SW = new SwitchMethods();
+		SwitchMethods SW = new SwitchMethods();
 		
 		if(password.equals(passwordRepeat))
 		{
 			errorMessage userCreated = new errorMessage("The user " + username + " 11has been created succesfully");
 			userCreated.setVisible(true);
-//			if (SW.createuser(username, password))
-//			{
-//				System.out.println("Hej");
-//			}
-//			else
-//			{
-//				System.out.println("Nej");
-//			}
+			SW.createuser(username, password);
 			return true;
 		}
 		

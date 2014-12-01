@@ -16,6 +16,7 @@ import javax.swing.JButton;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 public class createUser extends JFrame {
 
@@ -100,14 +101,19 @@ public class createUser extends JFrame {
 				String password = passwordField.getText();
 				String username = textField.getText();
 					
-					if (Logic.createUser(username, password, passwordRepeat))
-					{
-						System.out.println("hej");
-						dispose(); //Close window and return to menu
-					}
-					else
-					{
-						
+					try {
+						if (Logic.createUser(username, password, passwordRepeat))
+						{
+							System.out.println("hej");
+							dispose(); //Close window and return to menu
+						}
+						else
+						{
+							
+						}
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
 					}
 				}
 			

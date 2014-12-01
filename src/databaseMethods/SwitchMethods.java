@@ -65,9 +65,12 @@ public class SwitchMethods extends Model
 	public boolean createuser(String userName, String password)throws SQLException{
 		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
 		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
-		if(qb.insertInto("users", keys).values(values).Execute()){
+		if(qb.insertInto("users", keys).values(values).Execute())
+		{
 		return true;
-		}else{
+		}
+		else
+		{
 		return false;
 		}
 	}
