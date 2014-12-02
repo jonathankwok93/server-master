@@ -1,3 +1,6 @@
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.net.Socket;
 
 
@@ -5,7 +8,7 @@ public class ClientWorker {
 
 	private Socket connectionSocketConnected;
 	private CalendarInfo calendarinto = new CalendarInfo();
-	private GiantSwitch sw3itch = new GiantSwitch();
+	private GiantSwitch swi = new GiantSwitch();
 	private encryption encryption = new encryption();
 	private String incomingJson;
 	
@@ -15,12 +18,21 @@ public class ClientWorker {
 	}
 	
 	public void runForrestRun(){
-		
-		System.out.println("Connected...");
-		
-		
-	}
-	
-	
-	
+		try{
+			System.out.println("Connected...");
+			byte[] b = new byte [1000];
+			int count = connectionSocketConnected.getInputStream().read(b);
+			DataInputStream bias = 
+			new DataInputStream(connectionSocketConnected.getInputStream());
+			
+			DataOutputStream outToClient = 
+			new DataOutputStream(connectionSocketConnected.getOutputStream());
+			
+			outToClient.writeBytes(swi.GiantSwitchMethod(encryption.decrypt(b)));
+			System.out.println("Sending reply to client");
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		}	
+
 }
