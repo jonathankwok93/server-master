@@ -98,8 +98,9 @@ public class Execute extends Model {
      */
     public boolean Execute() throws SQLException {
         String sql = "";
-
+        System.out.println("hejsss");
         if (getQueryBuilder().isSoftDelete()) {
+        	System.out.println("What up!");
             sql = UPDATE + getQueryBuilder().getTableName() + " SET active = 0" +
                     WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " " + getWhere().getWhereValue() + ";  ";
             try {

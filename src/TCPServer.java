@@ -23,6 +23,7 @@ class TCPServer {
 			System.out.println("forbindelse Oprettet!");
 			//BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 			byte[] b = new byte[500000];
+			System.out.println("Byte er blevet sat");
 			int count = connectionSocket.getInputStream().read(b);
 			ByteArrayInputStream bais = new ByteArrayInputStream(b);
 			DataInputStream inFromClient = new DataInputStream(connectionSocket.getInputStream());		

@@ -63,18 +63,8 @@ public class Login extends JFrame {
 				
 				@SuppressWarnings("deprecation")
 				String password = passwordField.getText();
-				boolean hej = true;
 				if(Logic.authenticateAdmin(password)){
 					dispose();
-//					hej = ();
-//					if (doesDatabaseExist())
-//						{
-//						System.out.println("1");
-//						}
-//					else
-//						{
-//						System.out.println("2");
-//						};
 					mainMenu mainmenu = new mainMenu();
 					mainmenu.setVisible(true);
 					Logic.adminSignedIn = true;

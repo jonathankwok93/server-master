@@ -89,9 +89,9 @@ public class QueryBuilder {
      */
     public Values insertInto(String tableName, String[] fields){
 
-        QueryBuilder queryBuilder = new QueryBuilder();
-        queryBuilder.setTableName(tableName);
-
+    	QueryBuilder queryBuilder = new QueryBuilder();
+    	queryBuilder.setTableName(tableName);
+        
         StringBuilder sb = new StringBuilder();
         for (String n : fields) {
             if (sb.length() > 0) {
@@ -99,7 +99,9 @@ public class QueryBuilder {
             }
             sb.append(n);
         }
+        System.out.println(sb);
         queryBuilder.setFields(sb.toString());
+
         return new Values(queryBuilder);
 
     }

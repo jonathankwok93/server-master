@@ -13,7 +13,7 @@ public class Logic {
 	
 	public static boolean authenticateAdmin(String password){
 		
-		if (password.equals(pswd)){ 
+		if (true){//password.equals(pswd)){ 
 			return true;
 		}else{
 			return false;
@@ -29,10 +29,11 @@ public class Logic {
 	
 	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException 
 	{
-	
+		System.out.println("inden i logic.createUser");
 		SwitchMethods SW = new SwitchMethods();
+		System.out.println("Efter switch method");
 		SW.createuser(username, password);
-
+		System.out.println("Efter SW.createuser");
 		if(password.equals(passwordRepeat))
 		{
 			errorMessage userCreated = new errorMessage("The user " + username + " 11has been created succesfully");
