@@ -153,8 +153,10 @@ public abstract class Model {
      */
     public void getConnection(Boolean init) throws SQLException {
     	if(init) {
+        	System.out.println("lololol");
     		setConn(DriverManager.getConnection(sqlUrl, sqlUser, sqlPasswd));
     	}else{
+        	System.out.println("testetetetett" + "SQL-url: " + sqlUrl + "    dbName:" + dbName + "       sqlUser: " + sqlUser + "       sqlPasswd:" + sqlPasswd );
     		setConn(DriverManager.getConnection(sqlUrl+"/"+dbName, sqlUser, sqlPasswd));
     	}
     }

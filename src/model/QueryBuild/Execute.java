@@ -114,7 +114,8 @@ public class Execute extends Model {
             }
 
         } else if(getQueryBuilder().isUpdate()) {
-            sql = UPDATE + getQueryBuilder().getTableName() + " SET " + getQueryBuilder().getFields() + "" + WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " ?;";
+        	System.out.println("What up!2");
+        	sql = UPDATE + getQueryBuilder().getTableName() + " SET " + getQueryBuilder().getFields() + "" + WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " ?;";
             try {
                 getConnection(false);
                 getConn();
@@ -126,20 +127,26 @@ public class Execute extends Model {
                 e.printStackTrace();
             }
         } else {
-            System.out.println(sql);
-            
+        	System.out.println("What up!3");
+
+        	System.out.println(sql);
             sql = INSERTINTO + getQueryBuilder().getTableName() + " (" + getQueryBuilder().getFields() + ")" + VALUES + "(";
             StringBuilder sb = new StringBuilder();
             for (String n : getValues().getValues()) {
                 if (sb.length() > 0) sb.append(',');
                 sb.append(" ?");
             }
+
             sql += sb.toString();
             sql += " );";
             try {
-                getConnection(false);
+                System.out.println("hejjjjj1");
+            	getConnection(false);
+                System.out.println("hejjjjj2");
                 getConn();
+                System.out.println("hejjjjj3");
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
+
                 sqlStatement = getConn().prepareStatement(cleanSql);
                 int x = 0;
                 for (int i = 0; i < getValues().getValues().length; i++) {
@@ -154,6 +161,4 @@ public class Execute extends Model {
 
         return sqlStatement.execute();
     }
-
-
 }
