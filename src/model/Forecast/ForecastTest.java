@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class ForecastTest {
 
-	// Main metode til at koere en test af vejrudsigt funktionen
     public static String getForecast() throws SQLException {
 
         ForecastModel fm = new ForecastModel();
@@ -30,4 +29,4 @@ public class ForecastTest {
         	       
     }
 
-}
+} 

@@ -1,5 +1,6 @@
 import java.sql.SQLException;
 
+
 import model.Forecast.ForecastModel;
 import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
@@ -7,6 +8,7 @@ import model.calendar.Event;
 import model.calendar.GetCalendarData;
 import model.calendar.cbsevent;
 import model.note.Note;
+import JsonClasses.AuthUser;
 import JsonClasses.CalendarInfo;
 import JsonClasses.CreateCalender;
 import JsonClasses.DeleteCalender;
@@ -48,7 +50,14 @@ public class GiantSwitch {
 		 ** LOGIN **
 		 **********/
 		case "logIn":
-			System.out.println("Recieved logIn");
+			AuthUser authuser = (AuthUser)gson.fromJson(jsonString, AuthUser.class);
+			
+			try{
+				answer = SW.authenticate(authuser.getAuthUserEmail(), authuser.getAuthUserPassword(), authuser.getAuthUserIsAdmin());
+			}catch (Exception e){
+				e.printStackTrace(); 
+			}
+			
 			break;
 
 		case "logOut":
