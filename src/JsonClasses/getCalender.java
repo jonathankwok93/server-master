@@ -1,6 +1,6 @@
 package JsonClasses;
 
-public class getCalendar implements java.io.Serializable{
+public class getCalender implements java.io.Serializable{
 
 	private final long serialVersionUID = 2L;
 	private String overallId = "getCalendar";
