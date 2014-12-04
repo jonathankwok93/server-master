@@ -24,7 +24,8 @@ class TCPServer {
 			//BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 			byte[] b = new byte[500000];
 			System.out.println("Byte er blevet sat");
-			int count = connectionSocket.getInputStream().read(b);
+			//int count = connectionSocket.getInputStream().read(b);
+		//	System.out.println("count: " + count);
 			ByteArrayInputStream bais = new ByteArrayInputStream(b);
 			DataInputStream inFromClient = new DataInputStream(connectionSocket.getInputStream());		
 			//Creates an object of the data which is to be send back to the client, via the connectionSocket
@@ -47,4 +48,4 @@ class TCPServer {
 			}
 		}
 	
-		} 
+} 

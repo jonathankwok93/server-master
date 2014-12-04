@@ -131,6 +131,7 @@ public class Execute extends Model {
 
         	System.out.println(sql);
             sql = INSERTINTO + getQueryBuilder().getTableName() + " (" + getQueryBuilder().getFields() + ")" + VALUES + "(";
+            System.out.println(sql);
             StringBuilder sb = new StringBuilder();
             for (String n : getValues().getValues()) {
                 if (sb.length() > 0) sb.append(',');
@@ -141,24 +142,30 @@ public class Execute extends Model {
             sql += " );";
             try {
                 System.out.println("hejjjjj1");
+                System.out.println(sql);
             	getConnection(false);
                 System.out.println("hejjjjj2");
                 getConn();
                 System.out.println("hejjjjj3");
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
+                System.out.println("hejjjjj4");
 
                 sqlStatement = getConn().prepareStatement(cleanSql);
+                System.out.println("hejjjjj5");
+
                 int x = 0;
                 for (int i = 0; i < getValues().getValues().length; i++) {
                     x = i;
                     sqlStatement.setString(x+1, getValues().getValues()[i]);
                 }
+                System.out.println("hejjjjj6");
+
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
+        System.out.println("hejjjjj7");
         return sqlStatement.execute();
     }
 }
