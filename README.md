@@ -10,15 +10,15 @@ Indtast dette i din terminal:
 
 ## Kommentarer til Switch
 Switch kan:
-Create Calender
-Delete Calender
+Create Calendar
+Delete Calendar
 getQuote
 
 Switch mangler:
 - Login - Brug klassen AuthenticateUser (int authenticase) Bør overvejes om det skal være String pga. svar
 - Logout - Metoden skal oprettes (String metode)
-- Save Imported Calendar - Brug getCalenderData klassen
-- get Calendar - Brug getCalenderData klassen
+- Save Imported Calendar - Brug getCalendarData klassen
+- get Calendar - Brug getCalendarData klassen
 - getEvents - Brug Events klassen (ArrayList<Event> getEvents)
 - Create Event - Metoden mangler at oprettes i Events klassen
 - getEventInfo - Denne skal oprettes hvis den skal benyttes
