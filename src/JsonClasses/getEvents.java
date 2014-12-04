@@ -32,7 +32,7 @@ public class getEvents implements java.io.Serializable{
 		return CalendarID;
 	}
 	
-	public void setCalenderID(String CalendarID){
+	public void setCalendarID(String CalendarID){
 		this.CalendarID = CalendarID;
 	}
 }
