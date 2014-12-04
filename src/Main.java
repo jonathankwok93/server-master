@@ -1,5 +1,6 @@
 import GUI.GUILogic;
 import config.Configurations;
+import NyAdminGUI.Login;
 
 public class Main {
 	//Starts public main method.
@@ -10,8 +11,9 @@ public class Main {
 		cf.ReadFile();
 		
 		System.out.println(cf.getPassword());
-		
-		new GUILogic().run();
+		Login admin = new Login();
+		admin.setVisible(true);
+		//new GUILogic().run();
 	}
 
 }

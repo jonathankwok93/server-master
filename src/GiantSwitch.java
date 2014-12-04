@@ -61,7 +61,9 @@ public class GiantSwitch {
 			break;
 
 		case "logOut":
-			System.out.println("Recieved logOut");
+			//System.out.println("Recieved logOut");
+			
+			//Ikke nødvendig, da det kun er for admin
 			break;
 
 		/*************
