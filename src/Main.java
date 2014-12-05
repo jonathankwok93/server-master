@@ -15,7 +15,7 @@ public class Main {
 		cf.ReadFile();
 		
 		System.out.println(cf.getPassword());
-		new GUILogic().run();
+		//new GUILogic().run();
 		new runAdmin().run();
 	}														
 
