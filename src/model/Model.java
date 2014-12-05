@@ -159,7 +159,7 @@ public abstract class Model {
         	System.out.println("testetetetett" + "SQL-url: " + sqlUrl + "    dbName:" + dbName + "       sqlUser: " + sqlUser + "       sqlPasswd:" + sqlPasswd );
     		// Hardcoded database navn, username og kode. 	
         	setConn(DriverManager.getConnection(sqlUrl+"/"+dbName, sqlUser, sqlPasswd));
-//        	setConn(DriverManager.getConnection("jdbc:mysql://localhost:3306","root" , ""));
+        	//setConn(DriverManager.getConnection("jdbc:mysql://localhost:3306","root" , ""));
 
     		System.out.println("DONE DONE DONE");
     	}

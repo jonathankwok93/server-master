@@ -17,7 +17,7 @@ public class Main {
 		System.out.println(cf.getPassword());
 		new GUILogic().run();
 		new runAdmin().run();
-	}
+	}														
 
 }
 

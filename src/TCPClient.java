@@ -10,7 +10,7 @@ public class TCPClient {
 	public static void main(String[] args) throws Exception {
 		String modifiedSentence;
 		Gson gson = new GsonBuilder().create();
-		CreateCalender CC = new CreateCalender();
+		CreateCalendar CC = new CreateCalendar();
 		CC.setCalendarName("Din mors kalendar2");
 		CC.setPublicOrPrivate(1);
 		CC.setUserName("John");
@@ -18,7 +18,7 @@ public class TCPClient {
 		System.out.println(CC);
 		System.out.println(gsonString);
 
-		Socket clientSocket = new Socket("localhost", 3306);
+		Socket clientSocket = new Socket("localhost", 8888);
 		DataOutputStream outToServer = new DataOutputStream(
 				clientSocket.getOutputStream());
 		byte[] input = gsonString.getBytes();
@@ -36,4 +36,6 @@ public class TCPClient {
 		System.out.println("FROM SERVER: " + modifiedSentence);
 		clientSocket.close();
 	}
+	
+	
 }

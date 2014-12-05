@@ -1,6 +1,7 @@
 import java.sql.SQLException;
 
 
+
 import model.Forecast.ForecastModel;
 import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
@@ -70,9 +71,9 @@ public class GiantSwitch {
 		 ** CALENDAR **
 		 *************/
 		case "createCalendar":
-			CreateCalendar CC = (CreateCalendar)gson.fromJson(jsonString, CreateCalendar.class);
-			System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
-			answer = SW.createNewCalendar(CC.getUserName(), CC.getCalendarName(), CC.getPublicOrPrivate());
+		//	CreateCalender CC = (CreateCalender)gson.fromJson(jsonString, CreateCalender.class);
+		//	System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
+		//	answer = SW.createNewCalendar(CC.getUserName(), CC.getCalendarName(), CC.getPublicOrPrivate());
 			break;
 		
 		case "deleteCalendar":
@@ -94,9 +95,9 @@ public class GiantSwitch {
 
 		case "getEvents":
 			System.out.println("Recieved getEvents");
-//			cbsevent ev = (cbsevent)gson.fromJson(jsonString, cbsevent.class);
-//			GetCalendarData getcalendardata = new GetCalendarData();
-//			answer = getcalendardata.getuserevents(ev.getusername());
+			cbsevent ev = (cbsevent)gson.fromJson(jsonString, cbsevent.class);
+			GetCalendarData getcalendardata = new GetCalendarData();
+			//answer = getcalendardata.getUserEvents(ev.getUsername());
 			break;
 
 		case "createEvent":
