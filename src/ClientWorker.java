@@ -19,7 +19,7 @@ public class ClientWorker {
 	
 	public void runForrestRun(){
 		try{
-			System.out.println("Connected to client...");
+			System.out.println("Detecting incoming client message...");
 			byte[] b = new byte [50000];
 			int count = connectionSocketConnected.getInputStream().read(b);
 			DataInputStream bias = 
@@ -34,6 +34,7 @@ public class ClientWorker {
 			e.printStackTrace();
 			}
 		
-		}	
+		}
 
+	
 }

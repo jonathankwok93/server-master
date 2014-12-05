@@ -173,6 +173,11 @@ CREATE DATABASE IF NOT EXISTS cbscalendar;
 use cbscalendar;
 SET SESSION FOREIGN_KEY_CHECKS=0;
 
+/* Create Dummy User*/
+INSERT INTO 'cbscalendar' . 'users'
+('enail', 'active', 'password')
+VALUES ("test@test.com", true, "123");
+
 /* Create Tables */
 
 CREATE TABLE IF NOT EXISTS Calendar
