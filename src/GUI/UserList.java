@@ -24,9 +24,7 @@ import javax.swing.ImageIcon;
 import model.QueryBuild.QueryBuilder;
  
 public class UserList extends JPanel {
-    /**
-	 * 
-	 */
+  
 	private static final long serialVersionUID = 1L;
 	private static final ActionListener ActionListener = null;
 	private boolean DEBUG = false;
@@ -44,15 +42,10 @@ public class UserList extends JPanel {
                                 "Active",
                                 "Created datetime",
                                 "Password"};
- 
-
-
         	Object[][] data = {
         		
         };
         
-	
-    
         try {
 			QueryBuilder qb = new QueryBuilder();
 			rs = qb.selectFrom("users").all().ExecuteQuery();
@@ -205,18 +198,6 @@ public class UserList extends JPanel {
         
         frame.setVisible(true);
     }
- 
-//    public static void main(String[] args) {
-//        //Schedule a job for the event-dispatching thread:
-//        //creating and showing this application's GUI.
-//        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                createAndShowGUI();
-//     
-//
-//        }
-//        });
-//    }
     
     public void addActionListener(ActionListener l) {
 //		btnAdd.addActionListener(l);
