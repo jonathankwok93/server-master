@@ -17,4 +17,9 @@ public class UserID
 		this.userList = userListID;
 	}
 	
+	public String toString()
+	{
+		return this.userList;
+	}
+	
 }
