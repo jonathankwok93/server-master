@@ -10,9 +10,11 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 public class deleteUser extends JFrame {
 
@@ -20,9 +22,6 @@ public class deleteUser extends JFrame {
 	private JTextField textField;
 
 
-	/**
-	 * Create the frame.
-	 */
 	public deleteUser() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 550, 700);
@@ -53,6 +52,19 @@ public class deleteUser extends JFrame {
 		contentPane.add(lblSearchEvent);
 		
 		JButton btnSearch = new JButton("Search and destroy");
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e){
+			
+					//if(Logic.deleteUser(textField.getText())){
+					if(true){	
+					errorMessage em = new errorMessage("The user " + textField.getText() + " has been deleted");
+						em.setVisible(true);
+						dispose();
+					}
+				
+			}
+		});
 		btnSearch.setBounds(226, 93, 206, 29);
 		contentPane.add(btnSearch);
 		

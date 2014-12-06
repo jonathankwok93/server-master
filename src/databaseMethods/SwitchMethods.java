@@ -62,10 +62,17 @@ public class SwitchMethods extends Model
 		}
 	}
 	
+	public boolean deleteUser(String username) throws SQLException{
+		if(qb.deleteFrom("users").where("email", "=", username).Execute()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public boolean createuser(String userName, String password)throws SQLException{
 		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
 		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
-		System.out.println("inden i switchmethods");
 		if(qb.insertInto("users", keys).values(values).Execute())
 		{
 			System.out.println("true ftw");
