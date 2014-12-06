@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import databaseMethods.SwitchMethods;
+import model.QueryBuild.Execute;
 import model.QueryBuild.QueryBuilder;
 
 import java.awt.Font;
@@ -52,7 +53,6 @@ public class showAllUsers extends JFrame {
 			user = SW.getAllUsers();
 			for (int i=0; i< user.size();i++)
 			{
-//				user.size()+
 				String udskrift = user.get(i).toString();
 				System.out.println(udskrift);
 				data[i][0] =udskrift;
@@ -82,6 +82,7 @@ public class showAllUsers extends JFrame {
 		btnReturnToMenu.setBounds(19, 643, 146, 29);
 		contentPane.add(btnReturnToMenu);
 
+		
 	}
 
 }
