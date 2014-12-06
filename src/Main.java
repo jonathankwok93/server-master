@@ -5,7 +5,6 @@ import config.Configurations;
 import databaseMethods.SwitchMethods;
 
 public class Main {
-	//Starts public main method.
 	
 	public static void main(String[] args) {
 		Configurations cf = new Configurations();
@@ -25,6 +24,7 @@ public class Main {
 		// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}														
-
+		
+	}
+	
 }
