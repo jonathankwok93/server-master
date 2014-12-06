@@ -16,9 +16,11 @@ import GUI.MainMenu;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 import javax.swing.JComboBox;
 
+import databaseMethods.SwitchMethods;
 import model.Model;
 
 public class Login extends JFrame {
@@ -67,7 +69,7 @@ public class Login extends JFrame {
 					dispose();
 					mainMenu mainmenu = new mainMenu();
 					mainmenu.setVisible(true);
-					Logic.adminSignedIn = true;
+					Logic.adminSignedIn = true;					
 					dispose();
 				}else if (!Logic.authenticateAdmin(password)){
 					errorMessage passworddoesnotmatch = new errorMessage("The password does not match");

@@ -1,7 +1,6 @@
 package NyAdminGUI;
 
 import java.awt.BorderLayout;
-
 import java.awt.EventQueue;
 
 import javax.swing.JTable;
@@ -10,15 +9,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import model.QueryBuild.QueryBuilder;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 public class showAllUsers extends JFrame {
 
 	private JPanel contentPane;
 
-	
+	QueryBuilder qb = new QueryBuilder();
 
 	/**
 	 * Create the frame.
@@ -49,15 +52,10 @@ public class showAllUsers extends JFrame {
 		//Users should be pulled from DB, of course
 		String[] columnNames = {"Username", "Date Created", "Class"};
 		Object [][] data = {
-				{"Jonathan Kwok", "9/11/2014", "DØK 13"},
-				{"Carsten Svaneborg", "9/11/2014", "DØK 13"},
-				{"Paw Nielsen", "9/11/2014", "DØK 13"},
-				{"Mikkel Frid", "9/11/2014", "DØK 13"},
-				{"Andreas Hald", "9/11/2014", "DØK 13"},
-				{"Pi Nis", "9/11/2014", "MØK 12"},
-				{"Henrik Thorn", "9/11/2014", "Lecturer"},
-				{"","",""},
+				{},
 		};
+		
+		
 	
 		JTable showAllUsers = new JTable(data, columnNames);
 		showAllUsers.setShowGrid(true);

@@ -3,11 +3,13 @@ package NyAdminGUI;
 import java.util.Calendar;
 import java.sql.*;
 
+import model.QueryBuild.QueryBuilder;
 //import jdk.nashorn.internal.runtime.ECMAException;
 import databaseMethods.SwitchMethods;
 
 public class Logic {
-
+	
+	QueryBuilder qb = new QueryBuilder();
 	private static String pswd = "admin123";
 	static boolean adminSignedIn = false;
 
@@ -59,33 +61,7 @@ public class Logic {
 			return false;	
 		}
 	}
-
-
-
-	//	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException{
-	//		SwitchMethods SW = new SwitchMethods();
-	//
-	//		if(password.equals(passwordRepeat) && SW.createuser(username, password))
-	//		{
-	//			errorMessage userCreated = new errorMessage("The user " + username + " has been created succesfully");
-	//			userCreated.setVisible(true);
-	//			return true;
-	//		}
-	//		else if (!password.equals(passwordRepeat))
-	//		{
-	//			errorMessage passwordDoesNotMatch = new errorMessage("The passwords does not match");
-	//			passwordDoesNotMatch.setVisible(true);
-	//			return false;
-	//		}
-	//		else
-	//		{
-	//			errorMessage passwordDoesNotMatch = new errorMessage("Something went wrong.");
-	//			passwordDoesNotMatch.setVisible(true);
-	//			return false;
-	//		}
-	//
-	//		
-	//	}
+	
 
 	public static void removeEvent(String removeEventID){
 

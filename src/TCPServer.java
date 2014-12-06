@@ -5,7 +5,7 @@ import JsonClasses.CalendarInfo;
 import com.google.gson.stream.JsonReader;
 
 class TCPServer {    
-	public static void main() throws Exception       {
+	public static void main(String[] args) throws Exception       {
 	//public static void main(String argv[]) throws Exception       {
 
 		CalendarInfo CI = new CalendarInfo();

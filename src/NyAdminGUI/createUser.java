@@ -14,9 +14,12 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 
+import databaseMethods.SwitchMethods;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class createUser extends JFrame {
 
@@ -116,6 +119,22 @@ public class createUser extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					
+					SwitchMethods SW = new SwitchMethods();
+					ArrayList user;
+					try {
+						user = SW.getAllUsers();
+						for (int i=0; i>user.size();i++)
+						{
+							String udskrift = user.get(i).toString();
+							System.out.println(udskrift);
+							System.out.println("Hej!!!!!!!!!!!");
+						}
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
 				}
 			
 		});

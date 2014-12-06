@@ -1,6 +1,8 @@
 package databaseMethods;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import JsonClasses.UserID;
 import model.Model;
 import model.QOTD.QOTDModel;
 import model.QueryBuild.QueryBuilder;
@@ -23,6 +25,7 @@ public class SwitchMethods extends Model
 	 */
 
 	public String getCalendar(String Calendar) throws SQLException{
+		
 		String defaultreply = "Calendar was not found!";
 		String reply = null;
 		resultSet = qb.selectFrom("calendar").where("Name", "=", Calendar).ExecuteQuery();
@@ -36,6 +39,19 @@ public class SwitchMethods extends Model
 			return defaultreply;
 		}
 	}
+	
+	public ArrayList getAllUsers() throws SQLException
+	{
+		ArrayList<UserID> users = new ArrayList<UserID>();;
+		resultSet = qb.selectFrom("users").all().ExecuteQuery();
+		while (resultSet.next())
+		{
+			users.add(new UserID(resultSet.getString("email")));
+		}
+		
+		return users;
+	}
+	
 	
 	public int deleteNote(int noteID) throws SQLException{
 		try{
