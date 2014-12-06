@@ -2,7 +2,7 @@ package databaseMethods;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import JsonClasses.UserID;
+import JsonClasses.*;
 import model.Model;
 import model.QOTD.QOTDModel;
 import model.QueryBuild.QueryBuilder;

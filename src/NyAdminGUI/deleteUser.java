@@ -70,15 +70,14 @@ public class deleteUser extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-
 			}
 		});
 		
 		btnSearch.setBounds(226, 93, 206, 29);
 		contentPane.add(btnSearch);
-
+		
 		String [] columnNames = {"Username", "Date created", "Class"};
-
+		
 		//DB should fill the table with data
 		Object data [][] = {
 				{"Jonathan Kwok", "12/11/2014", "DØK 13"},
@@ -101,7 +100,7 @@ public class deleteUser extends JFrame {
 		lblForceRemoveEvent.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		lblForceRemoveEvent.setBounds(19, 18, 256, 34);
 		contentPane.add(lblForceRemoveEvent);
-
+		
 		JButton btnReturnToMenu = new JButton("Return to menu");
 		btnReturnToMenu.addMouseListener(new MouseAdapter() {
 			@Override
@@ -111,7 +110,7 @@ public class deleteUser extends JFrame {
 		});
 		btnReturnToMenu.setBounds(19, 643, 146, 29);
 		contentPane.add(btnReturnToMenu);
-
+		
 
 	}
 }
