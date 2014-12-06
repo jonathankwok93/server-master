@@ -12,9 +12,9 @@ public class SwitchMethods extends Model
 {
 	QueryBuilder qb = new QueryBuilder();
 	QOTDModel qm = new QOTDModel();
-	
 
-	
+
+
 	/**
 	 * Allows the client to create a new calendar
 	 * @param userName
@@ -25,21 +25,21 @@ public class SwitchMethods extends Model
 	 */
 
 	public String getCalendar(String Calendar) throws SQLException{
-		
+
 		String defaultreply = "Calendar was not found!";
 		String reply = null;
 		resultSet = qb.selectFrom("calendar").where("Name", "=", Calendar).ExecuteQuery();
 		try{
-		while(resultSet.next()){
-			reply =  resultSet.getString("CalendarID") + resultSet.getString("Name") + resultSet.getString("Active") +
-					resultSet.getString("Createdby") + resultSet.getString("PrivatePublic");
+			while(resultSet.next()){
+				reply =  resultSet.getString("CalendarID") + resultSet.getString("Name") + resultSet.getString("Active") +
+						resultSet.getString("Createdby") + resultSet.getString("PrivatePublic");
 			}
 			return reply;
 		}catch(SQLException e){
 			return defaultreply;
 		}
 	}
-	
+
 	public ArrayList getAllUsers() throws SQLException
 	{
 		ArrayList<UserID> users = new ArrayList<UserID>();;
@@ -48,14 +48,14 @@ public class SwitchMethods extends Model
 		{
 			users.add(new UserID(resultSet.getString("email")));
 		}
-		
+
 		return users;
 	}
-	
-	
+
+
 	public int deleteNote(int noteID) throws SQLException{
 		try{
-		Note note = new Note();
+			Note note = new Note();
 			//return note.DeleteNote(noteID);	
 			return 1;
 		}catch (Exception e){
@@ -63,69 +63,69 @@ public class SwitchMethods extends Model
 			return 2;
 		}
 	}
-	
+
 	public int deleteEvent (String eventid) throws SQLException{
 		try{
-			
-				if(qb.deleteFrom("events").where("eventid", "=", eventid).Execute()){
-					return 1;
-				}else{
-					return 2;
-				}
-			}catch(SQLException e){
-					e.printStackTrace();
-					return 3;
+
+			if(qb.deleteFrom("events").where("eventid", "=", eventid).Execute()){
+				return 1;
+			}else{
+				return 2;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+			return 3;
 		}
 	}
-	
+
 	public boolean deleteUser(String username) throws SQLException{
-		if(qb.deleteFrom("users").where("email", "=", username).Execute()){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
-	public boolean createuser(String userName, String password)throws SQLException{
-		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
-		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
-		if(qb.insertInto("users", keys).values(values).Execute())
+		if(qb.deleteFrom("users").where("email", "=", username).Execute())
 		{
-			System.out.println("true ftw");
-		return true;
+			return true;
 		}
 		else
 		{
+			return false;
+		}
+	}
+
+	public boolean createuser(String userName, String password)throws SQLException{
+		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
+		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
+		if(qb.insertInto("users", keys).values(values).Execute()){
+			System.out.println("true ftw");
+			return true;
+		}else{
 			System.out.println("False ftl");
-		return false;
+			return false;
 		}
 	}
 
 	public String getEvent(String CalendarID) throws SQLException{
-		
+
 		String defaultreply = "This calendar does not exist";
 		String reply = defaultreply;
 		qb = new QueryBuilder();
 		resultSet = qb.selectFrom("eventes").where("CalendarID", "=", CalendarID).ExecuteQuery();
-			if (resultSet.next()){
-				reply = resultSet.getString("eventID");
-			
-				reply = resultSet.getString("eventID"); //eventid =  row indeks?
-				reply += resultSet.getString("type");
-				reply += resultSet.getString("createdby");
-				reply += resultSet.getString("startTime");
-				reply += resultSet.getString("endTime");
-				reply += resultSet.getString("name");
-				reply += resultSet.getString("text");
-				reply += resultSet.getString("customevent");
-			
+		if (resultSet.next()){
+			reply = resultSet.getString("eventID");
+
+			reply = resultSet.getString("eventID"); //eventid =  row indeks?
+			reply += resultSet.getString("type");
+			reply += resultSet.getString("createdby");
+			reply += resultSet.getString("startTime");
+			reply += resultSet.getString("endTime");
+			reply += resultSet.getString("name");
+			reply += resultSet.getString("text");
+			reply += resultSet.getString("customevent");
+
 			return reply;
-			} else {
-				return reply;
-			}
-			
+		} else {
+			return reply;
+		}
+
 	}
-	
+
 	public String createEvent(String type, String location, String createdby, String startTime,
 			String endTime, String name, String text, String customEvent, String CalendarID) throws SQLException
 			{
@@ -134,19 +134,19 @@ public class SwitchMethods extends Model
 		String[] values = {type, location, createdby, startTime, endTime, name, text, customEvent, CalendarID};
 		if(qb.insertInto("events", keys).values(values).Execute()){
 			return "Success";
-			}else{
-				return "Error";
-			}
+		}else{
+			return "Error";
 		}
-	
+			}
+
 	public void createNote(int noteID, String text, String dateTime, String createdBy, int isActive, int eventID){
 		String returns = "";
 		Note note = new Note();
 		//return note.CreateNote(noteID, text, dateTime, createdBy, eventID, 1);
-	//		
+		//		
 	}
-	
-	
+
+
 	public String createNewCalendar (String userName, String calendarName, int privatePublic) throws SQLException
 	{
 		String stringToBeReturned ="";
@@ -160,33 +160,33 @@ public class SwitchMethods extends Model
 		{
 			stringToBeReturned = "The new calendar has not been created!";
 		}
-		
-		
+
+
 		return stringToBeReturned;
 	}
-	
+
 	public boolean authenticateNewCalendar(String newCalendarName) throws SQLException
 	{
 		getConn();
 		boolean authenticate = false;
-		
+
 		resultSet= qb.selectFrom("calendar").where("name", "=", newCalendarName).ExecuteQuery();
-				
-				//("select * from test.calendar where Name = '"+newCalendarName+"';");
+
+		//("select * from test.calendar where Name = '"+newCalendarName+"';");
 		while(resultSet.next())
 		{
 			authenticate = true;
 		}
 		return authenticate;
 	}
-	
+
 	public void addNewCalendar (String newCalendarName, String userName, int publicOrPrivate) throws SQLException
 	{
 		String [] keys = {"Name","active","CreatedBy","PrivatePublic"};
 		String [] values = {newCalendarName,"1",userName, Integer.toString(publicOrPrivate)};
 		qb.update("calendar", keys, values).all().Execute();
-		
-//		doUpdate("insert into test.calendar (Name, Active, CreatedBy, PrivatePublic) VALUES ('"+newCalendarName+"', '1', '"+userName+"', '"+publicOrPrivate+"');");
+
+		//		doUpdate("insert into test.calendar (Name, Active, CreatedBy, PrivatePublic) VALUES ('"+newCalendarName+"', '1', '"+userName+"', '"+publicOrPrivate+"');");
 	}
 	/**
 	 * Allows the client to delete a calendar
@@ -202,15 +202,15 @@ public class SwitchMethods extends Model
 
 		return stringToBeReturned;
 	}
-	
+
 	public String removeCalendar (String userName, String calendarName) throws SQLException
 	{
 		String stringToBeReturend = "";
 		String usernameOfCreator ="";
 		String calendarExists = "";
 		resultSet = qb.selectFrom("Calendar").where("Name", "=", calendarName).ExecuteQuery();
-				
-//				("select * from calendar where Name = '"+calendarName+"';");
+
+		//				("select * from calendar where Name = '"+calendarName+"';");
 		while(resultSet.next())
 		{
 			calendarExists = resultSet.toString();
@@ -241,13 +241,13 @@ public class SwitchMethods extends Model
 		{
 			stringToBeReturend = "The calendar you are trying to delete, does not exists.";
 		}
-		
-		
-		
+
+
+
 		return stringToBeReturend;
 	}
-	
-	
+
+
 	// Metoden faar email og password fra switchen (udtrukket fra en json) samt en boolean der skal saettes til true hvis det er serveren der logger paa, og false hvis det er en klient
 	/**
 	 * Allows the client to log in

@@ -103,11 +103,19 @@ public class Execute extends Model {
         	System.out.println("What up!");
             sql = UPDATE + getQueryBuilder().getTableName() + " SET active = 0" +
                     WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " " + getWhere().getWhereValue() + ";  ";
+        	System.out.println("What up4!");
             try {
-                getConnection(false);
+            	System.out.println("What up5!");
+            	getConnection(false);
+            	System.out.println("What up6!");
                 getConn();
+            	System.out.println("What up7!");
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
+                System.out.println(cleanSql);
+            	System.out.println("What up8!");
                 sqlStatement = getConn().prepareStatement(cleanSql);
+            	System.out.println(sqlStatement);
+                System.out.println("What up9!");
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -126,7 +134,8 @@ public class Execute extends Model {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } else {
+        } else 
+        	{
         	System.out.println("What up!3");
 
         	System.out.println(sql);
@@ -148,17 +157,23 @@ public class Execute extends Model {
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
 
                 sqlStatement = getConn().prepareStatement(cleanSql);
+
                 int x = 0;
                 for (int i = 0; i < getValues().getValues().length; i++) {
                     x = i;
                     sqlStatement.setString(x+1, getValues().getValues()[i]);
+                    System.out.println(sqlStatement);
                 }
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
 
-        return sqlStatement.execute();
+            	} 
+            catch (SQLException e) 
+            	{
+                e.printStackTrace();
+            	}
+        }
+        System.out.println("Hvad er sqlStatement?" + sqlStatement);
+    	return sqlStatement.execute();
+        
     }
 }

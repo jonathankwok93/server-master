@@ -9,7 +9,7 @@ import java.sql.*;
 
 /**
  * model.Model superclass, never instansiated. All child model classes inherits its properties, classes and methods */
-public abstract class Model {
+	public abstract class Model {
 
     private static Configurations cf = new Configurations();
 

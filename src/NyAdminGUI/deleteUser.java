@@ -24,7 +24,7 @@ public class deleteUser extends JFrame {
 
 	public deleteUser() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 550, 700);
+		setBounds(100, 100, 550, 250);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -51,7 +51,7 @@ public class deleteUser extends JFrame {
 		lblSearchEvent.setBounds(19, 70, 129, 16);
 		contentPane.add(lblSearchEvent);
 
-		JButton btnSearch = new JButton("Search and destroy");
+		JButton btnSearch = new JButton("Delete user");
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
@@ -75,32 +75,7 @@ public class deleteUser extends JFrame {
 		
 		btnSearch.setBounds(226, 93, 206, 29);
 		contentPane.add(btnSearch);
-		
-		String [] columnNames = {"Username", "Date created", "Class"};
-		
-		//DB should fill the table with data
-		Object data [][] = {
-				{"Jonathan Kwok", "12/11/2014", "DØK 13"},
-				{null, null, null}
-		};
-		JTable searchResult = new JTable (data, columnNames);
-		searchResult.setBounds(19, 166, 499, 465);
-		contentPane.add(searchResult);
-		searchResult.setRowHeight(30);
-
-		JLabel lblEventName = new JLabel("Userame");
-		lblEventName.setBounds(19, 138, 86, 16);
-		contentPane.add(lblEventName);
-
-		JLabel lblCreatedBy = new JLabel("Date created");
-		lblCreatedBy.setBounds(269, 138, 95, 16);
-		contentPane.add(lblCreatedBy);
-
-		JLabel lblForceRemoveEvent = new JLabel("Force remove user");
-		lblForceRemoveEvent.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblForceRemoveEvent.setBounds(19, 18, 256, 34);
-		contentPane.add(lblForceRemoveEvent);
-		
+	
 		JButton btnReturnToMenu = new JButton("Return to menu");
 		btnReturnToMenu.addMouseListener(new MouseAdapter() {
 			@Override
@@ -108,7 +83,7 @@ public class deleteUser extends JFrame {
 				dispose();
 			}
 		});
-		btnReturnToMenu.setBounds(19, 643, 146, 29);
+		btnReturnToMenu.setBounds(400, 180, 135, 30);
 		contentPane.add(btnReturnToMenu);
 		
 

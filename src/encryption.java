@@ -8,17 +8,18 @@ public class encryption {
 	{
 		Configurations CF = new Configurations();
 
-		System.out.println(CF.getFfcryptkey());
-		System.out.println("test");
 		String crypKey = CF.getFfcryptkey();
-		System.out.println(crypKey);
+		System.out.println("cryptkey er: " + crypKey);
 		double gladKo = Double.parseDouble(crypKey);
+		System.out.println("b er: " + b);
 		byte ff = (byte) gladKo;
+		System.out.println("ff er: " + ff);
 		for(int i = 0 ; i<b.length ; i++)
 		{
 			b[i] = (byte)(b[i]^ff);
 		}
 		String encrypted = new String(b).trim();
+		System.out.println("encrypted: " + encrypted);
 		return encrypted;
 	}
 }

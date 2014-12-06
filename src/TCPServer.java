@@ -27,17 +27,28 @@ class TCPServer {
 			byte[] b = new byte[500000];
 			System.out.println("Byte er blevet sat");
 			//int count = connectionSocket.getInputStream().read(b);
-		//	System.out.println("count: " + count);
+			//System.out.println("count: " + count);
 			ByteArrayInputStream bais = new ByteArrayInputStream(b);
+			System.out.println("Hvad er bais?" + bais);
+			System.out.println("Hvad er b?" + b);
+			String ny2  = cryp.decrypt(b);
+			System.out.println("Hvad er ny2? " + ny2);
+			
 			DataInputStream inFromClient = new DataInputStream(connectionSocket.getInputStream());		
+			
+			Object incommingTransmission;
+			incommingTransmission = inFromClient.toString();
+			System.out.println("incomming transmission:" + incommingTransmission);
 			//Creates an object of the data which is to be send back to the client, via the connectionSocket
 			DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 			System.out.println("Outtoclient oprettet!");
 			//Sets client sentence equals input from client
 			//incomingJson = inFromClient.readLine();			
 			
-			String ny = cryp.decrypt(b);
-			
+			String ny  = cryp.decrypt(b);
+
+//			String ny2 = cryp.decrypt(bais);
+			System.out.println("hej" + ny);
 			//cryp.StringEncryption(inFromClient.readLine());
 			System.out.println("Besked modtaget!");
 			//Sysout recieved message

@@ -23,21 +23,15 @@ public class Logic {
 
 	}
 
-	//Indsæt metode til at verificere at brugeren er blevet oprettet.
-	//	SwitchMethods SW = new SwitchMethods();
-	//if(SW.createuser(username, password))
-	//	if(true)
-	//	{
-
 	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException 
 	{
 		//System.out.println("inden i logic.createUser");
 		SwitchMethods SW = new SwitchMethods();
 		//System.out.println("Efter switch method");
-		SW.createuser(username, password);
 		//System.out.println("Efter SW.createuser");
 		if(password.equals(passwordRepeat))
 		{
+			SW.createuser(username, password);
 			errorMessage userCreated = new errorMessage("The user " + username + " 11has been created succesfully");
 			userCreated.setVisible(true);
 			return true;
@@ -53,7 +47,7 @@ public class Logic {
 	}
 
 	public static boolean deleteUser (String username)throws SQLException{
-
+		System.out.println("EVERYDAY IM DELETING");
 		SwitchMethods SW = new SwitchMethods();
 		if(SW.deleteUser(username)){
 			return true;
