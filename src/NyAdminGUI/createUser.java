@@ -120,21 +120,6 @@ public class createUser extends JFrame {
 						e1.printStackTrace();
 					}
 
-					SwitchMethods SW = new SwitchMethods();
-					ArrayList user;
-					try {
-						user = SW.getAllUsers();
-						for (int i=0; i<user.size();i++)
-						{
-							String udskrift = user.get(i).toString();
-							System.out.println(udskrift);
-//							user.get(i).
-						}
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-
 				}
 			
 		});
