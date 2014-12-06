@@ -18,13 +18,7 @@ public class Main {
 		System.out.println(cf.getPassword());
 		//new GUILogic().run();
 		new runAdmin().run();
-		try {
-			TCPServer.main();
-		} catch (Exception e) {
-		// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		
 	}
 	
-}
