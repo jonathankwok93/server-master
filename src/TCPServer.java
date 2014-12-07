@@ -10,7 +10,7 @@ class TCPServer {
 
 		CalendarInfo CI = new CalendarInfo();
 		GiantSwitch GS = new GiantSwitch();
-		encryption cryp = new encryption();
+		Encryption cryp = new Encryption();
 		
 		//Creates a socket to send and recieve messages in port 8888
 		ServerSocket welcomeSocket = new ServerSocket(8888);

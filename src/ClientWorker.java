@@ -9,7 +9,7 @@ public class ClientWorker {
 	private Socket connectionSocketConnected;
 	private CalendarInfo calendarinto = new CalendarInfo();
 	private GiantSwitch swi = new GiantSwitch();
-	private encryption encryption = new encryption();
+	private Encryption encryption = new Encryption();
 	private String incomingJson;
 	
 	ClientWorker(Socket connectionSocket){

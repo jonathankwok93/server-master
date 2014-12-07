@@ -3,7 +3,7 @@ import javax.xml.bind.ParseConversionEvent;
 import config.Configurations;
 
 
-public class encryption {
+public class Encryption {
 	public String decrypt(byte[] b)
 	{
 		Configurations CF = new Configurations();
