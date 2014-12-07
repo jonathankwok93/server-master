@@ -25,7 +25,7 @@ public class test {
 	public static void main (String [] args) throws Exception{
 		
 		GetCalendarData GCD = new GetCalendarData();
-		GCD.getDataFromCalendar();
+		GCD.getDataFromCalendar("kakw13ab");
 		
 	}
 
