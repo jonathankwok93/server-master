@@ -27,15 +27,20 @@ public class viewAllEvents extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		
-		String [] columnNames = {"Event name", "Location", "Created by"};
+		//Laver et objectarray med plads til 10 forskellige events
+		String [] columnNames = {"Eventid", "Event name", "Location", "Created by", "Start", "End", "Text", "Customevent", "CalendarID"};
 		Object[][] data = {
-				{"Event name", "Location", "Created by"},
-				{null, null,null},
-				{null, null,null},
-				{null, null,null},
-				{null, null,null},
-				{null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+				{null, null,null,null, null,null,null, null,null},
+
 		};
 		contentPane.setLayout(null);
 		

@@ -12,8 +12,6 @@ class TCPServer {
 		GiantSwitch GS = new GiantSwitch();
 		encryption cryp = new encryption();
 		
-
-		
 		//Creates a socket to send and recieve messages in port 8888
 		ServerSocket welcomeSocket = new ServerSocket(8888);
 		//Creates 2 string to hold random stuff
@@ -34,21 +32,24 @@ class TCPServer {
 			String ny2  = cryp.decrypt(b);
 			System.out.println("Hvad er ny2? " + ny2);
 			
-			DataInputStream inFromClient = new DataInputStream(connectionSocket.getInputStream());		
+			System.out.println("IP: " + connectionSocket.getLocalAddress() + " has connected to the server");
+
 			
+			DataInputStream inFromClient = new DataInputStream(connectionSocket.getInputStream());		
+			DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+
 			Object incommingTransmission;
 			incommingTransmission = inFromClient.toString();
 			System.out.println("incomming transmission:" + incommingTransmission);
 			//Creates an object of the data which is to be send back to the client, via the connectionSocket
-			DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 			System.out.println("Outtoclient oprettet!");
 			//Sets client sentence equals input from client
 			//incomingJson = inFromClient.readLine();			
 			
 			String ny  = cryp.decrypt(b);
-
+			
+			
 //			String ny2 = cryp.decrypt(bais);
-			System.out.println("hej" + ny);
 			//cryp.StringEncryption(inFromClient.readLine());
 			System.out.println("Besked modtaget!");
 			//Sysout recieved message

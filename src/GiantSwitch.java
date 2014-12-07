@@ -112,6 +112,11 @@ public class GiantSwitch {
 			getEvents get = (getEvents)gson.fromJson(jsonString, getEvents.class);
 		    answer = SW.getEvent(get.getCalendarID());
 			break;
+		
+		case "testFTW":
+			System.out.println("Det fucking virker");
+		    answer = "det virker";
+			break;
 			
 		case "deleteEvent":
 			System.out.println("Recieved deleteEvent");
