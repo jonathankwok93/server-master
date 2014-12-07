@@ -28,7 +28,7 @@ public class SwitchMethods extends Model
 
 		String defaultreply = "Calendar was not found!";
 		String reply = null;
-		resultSet = qb.selectFrom("calendar").where("Name", "=", Calendar).ExecuteQuery();
+		resultSet = qb.selectFrom("calender").where("Name", "=", Calendar).ExecuteQuery();
 		try{
 			while(resultSet.next()){
 				reply =  resultSet.getString("CalendarID") + resultSet.getString("Name") + resultSet.getString("Active") +
