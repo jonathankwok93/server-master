@@ -52,18 +52,21 @@ public class SwitchMethods extends Model
 		return users;
 	}
 	
-	public ArrayList getUserActive() throws SQLException
+	public ArrayList getAllActiveUsers() throws SQLException
 	{
-		ArrayList<UserID> users = new ArrayList<UserID>();;
+		ArrayList<UserActive> usersActive = new ArrayList<UserActive>();;
 		resultSet = qb.selectFrom("users").all().ExecuteQuery();
 		while (resultSet.next())
 		{
-			users.add(new UserID(resultSet.getString("email")));
+			usersActive.add(new UserActive(resultSet.getString("active")));
 		}
 
-		return users;
+		return usersActive;
 	}
 
+	
+	
+	
 
 	public int deleteNote(int noteID) throws SQLException{
 		try{

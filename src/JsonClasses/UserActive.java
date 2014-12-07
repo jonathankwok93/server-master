@@ -1,26 +1,25 @@
 package JsonClasses;
 
-public class UserActive {
+public class UserActive 
+{
 	
-private String userActiveList;
+	private String userActiveList;
 	
-	
-	public UserActive(int oint) {
-		this.userActiveList = int;
+	public UserActive(String string) {
+		this.userActiveList = string;
 	}
 
 	public String getUserActiveList() {
 		return userActiveList;
 	}
 	
-	public void setUserActiveList(int userActiveList) {
-		this.userActiveList = userActiveList;
+	public void setUserActiveList(String userListID) {
+		this.userActiveList = userListID;
 	}
 	
-	public int toInt()
+	public String toString()
 	{
 		return this.userActiveList;
 	}
-
 }
 
