@@ -60,15 +60,19 @@ public class GetCalendarData {
         //tester events activityID's
         	int year = Calendar.getInstance().get(Calendar.YEAR);
         	int month = Calendar.getInstance().get(Calendar.MONTH);
-        	
-        	String monthString = String.valueOf(month);
-        	String yearString = String.valueOf(year);
+        
         	ArrayList<String> obj = new ArrayList<String>();  
         	
         //	Arrays.asList(events.getEvents().get(i).getStart());
         	
 //        	System.out.println(obj);
-        	//if(events.getEvents().get(i).getStart(0).equals(yearString){
+//        	if(events.getEvents().get(i).getStart(0).equals(yearString){
+        	if(String.valueOf(events.getEvents().get(0).getStart()).equals(String.valueOf(year)){ 
+            	if(String.valueOf(events.getEvents().get(1).getStart()).equals(String.valueOf(month)){ 
+
+        		System.out.println("yes");
+        			}
+        	}
         	for(int i = 0; i < events.getEvents().size(); i++){
         	//if(events.getEvents().get(0).getStart().equals(String.valueOf(year))){ 
         	//		&& events.getEvents().get(1).getStart().equals(monthString)){
