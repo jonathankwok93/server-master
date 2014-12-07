@@ -5,6 +5,9 @@ import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 
 /**
  * Created by jesperbruun on 13/10/14.
@@ -50,14 +53,34 @@ public class GetCalendarData {
     	String userID = username;
         String json = readUrl("http://calendar.cbs.dk/events.php/"+ userID +"/"+e.getKey(userID)+".json");
 //        String json = readUrl("http://calendar.cbs.dk/events.php/caha13ag/02a24d4e002e6e3571227c39e2f63784.json");
-        System.out.println(json);
+       // System.out.println(json);
         Gson gson = new Gson();
         Events events = gson.fromJson(json, Events.class); 
 
         //tester events activityID's
-//        for (int i = 0; i < events.getEvents().size(); i++){
-//            System.out.print(events.getEvents().get(i).getActivityid());
-//            System.out.print(events.getEvents().get(i).getTitle());
+        	int year = Calendar.getInstance().get(Calendar.YEAR);
+        	int month = Calendar.getInstance().get(Calendar.MONTH);
+        	
+        	String monthString = String.valueOf(month);
+        	String yearString = String.valueOf(year);
+        	ArrayList<String> obj = new ArrayList<String>();  
+        	
+        //	Arrays.asList(events.getEvents().get(i).getStart());
+        	
+//        	System.out.println(obj);
+        	//if(events.getEvents().get(i).getStart(0).equals(yearString){
+        	for(int i = 0; i < events.getEvents().size(); i++){
+        	//if(events.getEvents().get(0).getStart().equals(String.valueOf(year))){ 
+        	//		&& events.getEvents().get(1).getStart().equals(monthString)){
+	            System.out.print(events.getEvents().get(i).getDescription());
+	            System.out.print(events.getEvents().get(i).getType());
+	            System.out.print(events.getEvents().get(i).getLocation());
+	            System.out.print(events.getEvents().get(i).getStart());
+	            System.out.print(events.getEvents().get(i).getEnd());
+	            System.out.println();
+        	
+        }
+
         
     }
 }
