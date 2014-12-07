@@ -75,9 +75,14 @@ public class QueryBuilder {
     public Where selectFrom(String tableName) {
 
         QueryBuilder queryBuilder = new QueryBuilder();
+		System.out.println("testing1.1.1.1");
 
         queryBuilder.setSelectValue("*");
+		System.out.println("testing1.1.1.2");
+
         queryBuilder.setTableName(tableName);
+		System.out.println("testing1.1.1.3");
+
         return new Where(queryBuilder);
     }
 

@@ -1,6 +1,7 @@
 package model.QueryBuild;
 
 import model.Model;
+
 import org.apache.commons.lang.StringEscapeUtils;
 
 import java.sql.ResultSet;
@@ -61,10 +62,19 @@ public class Execute extends Model {
      */
     public ResultSet ExecuteQuery() throws SQLException {
         String sql = "";
-        if (isGetAll()) {
+        if(isGetAll())
+        {
+        	System.out.println("isGetAll = true" );
+        }
+        else
+        {
+        	System.out.println("isGetAll = false" );
+        }
+		System.out.println();
+		if (isGetAll()) {
             sql = SELECT + getQueryBuilder().getSelectValue() + FROM + getQueryBuilder().getTableName() + ";";
             try {
-                getConnection(false);
+            	getConnection(false);
                 getConn();
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
                 sqlStatement = getConn().prepareStatement(cleanSql);
@@ -73,11 +83,12 @@ public class Execute extends Model {
                 e.printStackTrace();
             }
         } else {
+
             sql = SELECT + getQueryBuilder().getSelectValue() +
                     FROM + getQueryBuilder().getTableName() +
                     WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " ?;";
             try {
-                getConnection(false);
+            	getConnection(false);
                 getConn();
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
                 sqlStatement = getConn().prepareStatement(cleanSql);
@@ -87,9 +98,11 @@ public class Execute extends Model {
                 e.printStackTrace();
             }
         }
+		System.out.println("testing1.1.1.1.10");
+		System.out.println(sqlStatement);
         return sqlStatement.executeQuery();
     }
-
+    
 
     /**
      * Execute SQL Query. <strong>OBS nothing returns.</strong>
@@ -123,9 +136,18 @@ public class Execute extends Model {
             }
 
         } else if(getQueryBuilder().isUpdate()) {
-        	System.out.println("What up!2");
-        	sql = UPDATE + getQueryBuilder().getTableName() + " SET " + getQueryBuilder().getFields() + "" + WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " ?;";
-            try {
+        	System.out.println("testing1.3.1");
+        	System.out.println("Update : " + UPDATE);
+        	System.out.println("Where : " + WHERE);
+        	System.out.println("getWhere: " + getWhere());
+        	System.out.println("getWhereKey: " );
+        	System.out.println("1" + getQueryBuilder().getTableName());
+        	System.out.println("2" + getQueryBuilder().getFields());
+//        	System.out.println("3" + getWhere().getWhereKey());
+//        	System.out.println("4" + getWhere().getWhereOperator());
+        	sql = UPDATE + getQueryBuilder().getTableName() + " SET " + getQueryBuilder().getFields() + "'" + WHERE + getWhere().getWhereKey() + "' " + getWhere().getWhereOperator() + " ?;";
+        	System.out.println("testing1.3.2");
+        	try {
                 getConnection(false);
                 getConn();
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
@@ -139,8 +161,9 @@ public class Execute extends Model {
         	{
         	System.out.println("What up!3");
 
-        	System.out.println(sql);
+        	System.out.println("her burde sql stå1: " + sql);
             sql = INSERTINTO + getQueryBuilder().getTableName() + " (" + getQueryBuilder().getFields() + ")" + VALUES + "(";
+        	System.out.println("her burde sql stå2: " + sql);
             StringBuilder sb = new StringBuilder();
             for (String n : getValues().getValues()) {
                 if (sb.length() > 0) sb.append(',');
@@ -149,6 +172,7 @@ public class Execute extends Model {
 
             sql += sb.toString();
             sql += " );";
+            System.out.println("færdig sql string: " + sql);
             try {
                 System.out.println("hejjjjj1");
             	getConnection(false);

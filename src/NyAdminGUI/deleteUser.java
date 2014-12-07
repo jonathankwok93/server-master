@@ -11,6 +11,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
+import model.QueryBuild.QueryBuilder;
+import databaseMethods.SwitchMethods;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -57,6 +60,21 @@ public class deleteUser extends JFrame {
 			public void mouseClicked(MouseEvent e){
 
 				try {
+//					System.out.println("testing1");
+//					String createCalendar;
+//					System.out.println("testing2");
+//					String testUserName = "CarstenTest1";
+//					System.out.println("testing3");
+//					String testCalendarName = "Carstens hygge kalender";
+//					System.out.println("testing4");
+//					int privatEllerPublic = 1;
+//					System.out.println("testing5");
+//					SwitchMethods SW = new SwitchMethods();
+//					System.out.println("testing6");
+//					createCalendar = SW.createNewCalendar(testUserName, testCalendarName, privatEllerPublic);
+//					System.out.println("testing7");
+
+
 					if(Logic.deleteUser(textField.getText())){
 					//if(true){	
 						errorMessage em = new errorMessage("The user " + textField.getText() + " has been deleted");
@@ -81,22 +99,25 @@ public class deleteUser extends JFrame {
 		contentPane.add(lblCreateCalendar);
 
 		JButton btnCreateCalendar = new JButton("Create calendar");
-		btnSearch.addMouseListener(new MouseAdapter() {
+		btnCreateCalendar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+				String calendarName = "Carstens hygge kalender3";
+				String Active = "1";
+				String CreatedBy = "user";
+				String PrivatePublic = "1";
 
+				System.out.println("Nu er vi nået til else-metoden");
+				QueryBuilder qb = new QueryBuilder();
+				String[] kolonner = { "Name", "CreatedBy", "PrivatePublic", "Active", };
+				String[] Values = { calendarName, CreatedBy, PrivatePublic, Active};
 				try {
-					String createCalendar;
-					createCalendar = SwitchMethods.createNewCalendar()
-					if(Logic.deleteUser(textField.getText())){
-					//if(true){	
-						errorMessage em = new errorMessage("The user " + textField.getText() + " has been deleted");
-						em.setVisible(true);
-						dispose();
-					}else{
-						errorMessage em = new errorMessage("The user " + textField.getText() + " has been deleted");
-						em.setVisible(true);
-					}
+					System.out.println("Nu er vi nået til qb.insertInto");
+					qb.insertInto("Calendar", kolonner ).values(Values).Execute();
+
+					System.out.println("Calendar has been succesfully added!");
+
+
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

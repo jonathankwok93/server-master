@@ -83,8 +83,6 @@ public class GUILogic {
 			if (e.getSource() == screen.getMainMenu().getBtnEventlist()){
 				screen.show(Screen.EVENTLIST);
 			}
-			
-
 		}
 	}
 	private class AddEventGUIActionListener implements ActionListener {

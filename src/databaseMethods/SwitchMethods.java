@@ -165,41 +165,59 @@ public class SwitchMethods extends Model
 	public String createNewCalendar (String userName, String calendarName, int privatePublic) throws SQLException
 	{
 		String stringToBeReturned ="";
+		System.out.println("testing1.1");
 		testConnection();
+		System.out.println("testing1.2");
 		if(authenticateNewCalendar(calendarName) == false)
 		{
+			System.out.println("testing1.3");
 			addNewCalendar(calendarName, userName, privatePublic);
+			System.out.println("testing1.4");
 			stringToBeReturned = "The new calendar has been created!";
+			System.out.println("testing1.5");
 		}
 		else
 		{
+			System.out.println("testing1.6");
 			stringToBeReturned = "The new calendar has not been created!";
 		}
 
+		System.out.println("testing1.7");
 
 		return stringToBeReturned;
 	}
 
 	public boolean authenticateNewCalendar(String newCalendarName) throws SQLException
 	{
+		System.out.println("testing1.1.1");
 		getConn();
+		System.out.println("testing1.1.2");
 		boolean authenticate = false;
+		System.out.println("Her burde newCalendarName stå: " + newCalendarName);
+		System.out.println("testing1.1.3");
 
 		resultSet= qb.selectFrom("calendar").where("name", "=", newCalendarName).ExecuteQuery();
+		System.out.println("testing1.1.4");
 
 		//("select * from test.calendar where Name = '"+newCalendarName+"';");
 		while(resultSet.next())
 		{
 			authenticate = true;
 		}
+		System.out.println("testing1.1.4,1");
+
 		return authenticate;
 	}
 
 	public void addNewCalendar (String newCalendarName, String userName, int publicOrPrivate) throws SQLException
 	{
+		System.out.println("testing1.2.1");
 		String [] keys = {"Name","active","CreatedBy","PrivatePublic"};
 		String [] values = {newCalendarName,"1",userName, Integer.toString(publicOrPrivate)};
+		System.out.println("testing1.2.2");
 		qb.update("calendar", keys, values).all().Execute();
+		System.out.println("testing1.2.3");
+
 
 		//		doUpdate("insert into test.calendar (Name, Active, CreatedBy, PrivatePublic) VALUES ('"+newCalendarName+"', '1', '"+userName+"', '"+publicOrPrivate+"');");
 	}
