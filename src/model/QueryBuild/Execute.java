@@ -102,8 +102,9 @@ public class Execute extends Model {
         if (getQueryBuilder().isSoftDelete()) {
         	System.out.println("What up!");
             sql = UPDATE + getQueryBuilder().getTableName() + " SET active = 0" +
-                    WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " " + getWhere().getWhereValue() + ";  ";
+                    WHERE + getWhere().getWhereKey() + " " + getWhere().getWhereOperator() + " \"" + getWhere().getWhereValue() + "\";  ";
         	System.out.println("What up4!");
+        	System.out.println(sql);
             try {
             	System.out.println("What up5!");
             	getConnection(false);
