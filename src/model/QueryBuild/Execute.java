@@ -64,11 +64,9 @@ public class Execute extends Model {
         String sql = "";
         if(isGetAll())
         {
-        	System.out.println("isGetAll = true" );
         }
         else
         {
-        	System.out.println("isGetAll = false" );
         }
 		System.out.println();
 		if (isGetAll()) {
@@ -98,8 +96,7 @@ public class Execute extends Model {
                 e.printStackTrace();
             }
         }
-		System.out.println("testing1.1.1.1.10");
-		System.out.println(sqlStatement);
+//		System.out.println(sqlStatement);
         return sqlStatement.executeQuery();
     }
     
