@@ -156,7 +156,7 @@ import java.sql.*;
         	System.out.println("lololol");
     		setConn(DriverManager.getConnection(sqlUrl, sqlUser, sqlPasswd));
     	}else{
-        	//System.out.println("testetetetett" + "SQL-url: " + sqlUrl + "    dbName:" + dbName + "       sqlUser: " + sqlUser + "       sqlPasswd:" + sqlPasswd );
+        	System.out.println("testetetetett" + "SQL-url: " + sqlUrl + "    dbName:" + dbName + "       sqlUser: " + sqlUser + "       sqlPasswd:" + sqlPasswd );
     		// Hardcoded database navn, username og kode. 	
 //        	setConn(DriverManager.getConnection(sqlUrl+"/"+dbName, sqlUser, sqlPasswd));
         	setConn(DriverManager.getConnection(sqlUrl + dbName, sqlUser, sqlPasswd));

@@ -53,6 +53,7 @@ public class Execute extends Model {
     public Execute(QueryBuilder queryBuilder, Values values) {
         this.queryBuilder = queryBuilder;
         this.values = values;
+        System.out.println("execute querybuilder og values er blevet sat");
     }
 
     /**
@@ -159,16 +160,46 @@ public class Execute extends Model {
         	System.out.println("What up!3");
 
         	System.out.println("her burde sql stå1: " + sql);
-            sql = INSERTINTO + getQueryBuilder().getTableName() + " (" + getQueryBuilder().getFields() + ")" + VALUES + "(";
+            sql = INSERTINTO + "cbscalendar." + getQueryBuilder().getTableName() + " (" + getQueryBuilder().getFields() + ")" + VALUES + "(";
         	System.out.println("her burde sql stå2: " + sql);
             StringBuilder sb = new StringBuilder();
-            for (String n : getValues().getValues()) {
-                if (sb.length() > 0) sb.append(',');
-                sb.append(" ?");
-            }
+            System.out.println("hvad er sb??? " + sb);
+//            getValues().getValues();
+            String[] comeon = getValues().getValues();
+//            System.out.println(comeon[0]);
+//            System.out.println(comeon[1]);
+//            System.out.println(comeon[2]);
+//            System.out.println(comeon.length);
+            for(int i =0; comeon.length>i;i++ )
+            {
+            	System.out.println(comeon[i]);
+                sql += "\"" + comeon[i].toString() + "\"";
+                int j=i+2;
+                
+                if (j<= comeon.length)
+                {
+                    sql +=",";
 
-            sql += sb.toString();
-            sql += " );";
+                }
+            }
+            System.out.println("Nu burde værdier være blevet skrevet ud!");
+//            for (String n : getValues().getValues())
+//            {
+//                if (sb.length() > 0) sb.append(',');
+//                sb.append(" ?");
+//            }
+
+
+            
+            System.out.println("Hvad er sb???" + sb);
+            System.out.println("Hvad er sblength???" + sb.length());
+
+//            System.out.println("Hvad er n???" + n);
+            
+            System.out.println("Hvad er getValues???" + getValues().getValues());
+
+//            sql += sb.toString();
+            sql += ");";
             System.out.println("færdig sql string: " + sql);
             try {
                 System.out.println("hejjjjj1");
@@ -180,12 +211,13 @@ public class Execute extends Model {
 
                 sqlStatement = getConn().prepareStatement(cleanSql);
 
-                int x = 0;
-                for (int i = 0; i < getValues().getValues().length; i++) {
-                    x = i;
-                    sqlStatement.setString(x+1, getValues().getValues()[i]);
-                    System.out.println(sqlStatement);
-                }
+//                int x = 0;
+//                for (int i = 0; i < getValues().getValues().length; i++) {
+//                    x = i;
+//                    System.out.println("Hvad er det endelige statement?" + sqlStatement);
+//                    sqlStatement.setString(x+1, getValues().getValues()[i]);
+//                    System.out.println(sqlStatement);
+//                }
 
 
             	} 

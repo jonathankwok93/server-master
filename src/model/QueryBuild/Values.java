@@ -28,6 +28,12 @@ public class Values {
 
     public Execute values(String[] values){
         Values v = new Values();
+        System.out.println("Values bliver sat" + values);
+        System.out.println(values[0]);
+        System.out.println(values[1]);
+        System.out.println(values[2]);
+        System.out.println(values.length);
+        
         v.setValues(values);
         return new Execute(getQueryBuilder(), v);
     }

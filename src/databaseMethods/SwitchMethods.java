@@ -105,6 +105,7 @@ public class SwitchMethods extends Model
 	}
 
 	public boolean createuser(String userName, String password)throws SQLException{
+		System.out.println("boolean createuser i SwithcMethods");
 		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
 		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
 		if(qb.insertInto("users", keys).values(values).Execute()){

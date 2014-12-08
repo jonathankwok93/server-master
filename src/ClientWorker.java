@@ -58,9 +58,13 @@ public class ClientWorker {
 			new DataOutputStream(connectionSocketConnected.getOutputStream());
 			
 			String inputFromClientDecrypted = encryption.decrypt(b);
+<<<<<<< Updated upstream
 			System.out.println(inputFromClientDecrypted);
 			
 			System.out.println("Print besked: " + inputFromClientDecrypted);
+=======
+			System.out.println("input til servere er: " + inputFromClientDecrypted);
+>>>>>>> Stashed changes
 			String outputToClient = GS.GiantSwitchMethod(inputFromClientDecrypted);
 			byte [] output = outputToClient.getBytes();
 			byte key = (byte) 3.1470;

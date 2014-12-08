@@ -3,9 +3,19 @@ import java.sql.SQLException;
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+>>>>>>> Stashed changes
 import model.Forecast.ForecastModel;
 import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
+import model.QueryBuild.QueryBuilder;
+import model.QueryBuild.Values;
 import model.calendar.Event;
 import model.calendar.GetCalendarData;
 import model.calendar.cbsevent;
@@ -73,6 +83,45 @@ public class GiantSwitch {
 			 ** CALENDAR **
 			 *************/
 		case "createCalendar":
+			//Denne metode er lavet kun til klienter
+						
+			String[] stringSplitted = jsonString.split(";");
+			String caseName = stringSplitted[0];
+			String calendarName = stringSplitted[1];
+			String active = stringSplitted[2];
+			String createdBy = stringSplitted[3];
+			String privatePublic = stringSplitted[4];
+
+			System.out.println(caseName);
+			System.out.println(calendarName);
+			System.out.println(active);
+			System.out.println(createdBy);
+			System.out.println(privatePublic);
+
+			QueryBuilder qb = new QueryBuilder();
+
+			String[] kolonner = { "Name","Active", "CreatedBy", "PrivatePublic"};
+			String[] newValues = { calendarName,active, createdBy, privatePublic};
+			
+			System.out.println("So far so good.");
+			try 
+			{
+				System.out.println("Can calendar be added?");
+				System.out.println();
+//				Values.setValues(newValues);
+				qb.insertInto("Calendar", kolonner ).values(newValues).Execute();
+				System.out.println("Calendar has been succesfully added!");
+
+
+			} 
+			catch (SQLException e1) 
+			{
+				System.out.println("Damn, missed.");
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			System.out.println("Wuuu");
+			
 			//	CreateCalender CC = (CreateCalender)gson.fromJson(jsonString, CreateCalender.class);
 			//	System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
 			//	answer = SW.createNewCalendar(CC.getUserName(), CC.getCalendarName(), CC.getPublicOrPrivate());

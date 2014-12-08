@@ -101,7 +101,6 @@ public class deleteUser extends JFrame {
 				String[] kolonner = { "Name", "CreatedBy", "PrivatePublic", "Active", };
 				String[] Values = { calendarName, CreatedBy, PrivatePublic, Active};
 				try {
-					System.out.println("Nu er vi nået til qb.insertInto");
 					qb.insertInto("Calendar", kolonner ).values(Values).Execute();
 
 					System.out.println("Calendar has been succesfully added!");

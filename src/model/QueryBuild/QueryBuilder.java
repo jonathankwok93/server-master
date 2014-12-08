@@ -33,6 +33,7 @@ public class QueryBuilder {
     }
 
     protected String getTableName() {
+    	System.out.println("hvornår er vi her??");
         return tableName;
     }
     protected void setTableName(String tableName) {
@@ -104,6 +105,7 @@ public class QueryBuilder {
             }
             sb.append(n);
         }
+        System.out.println("yoyoyoyu");
         System.out.println(sb);
         queryBuilder.setFields(sb.toString());
 
@@ -118,6 +120,7 @@ public class QueryBuilder {
      * @param values
      * @return
      */
+    
     public Where update(String tableName, String[] fields, String[] values) {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.setTableName(tableName);

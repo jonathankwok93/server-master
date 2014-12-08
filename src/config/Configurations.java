@@ -12,7 +12,7 @@ import org.json.simple.parser.ParseException;
 
 public class Configurations {
     private String host = "localhost";
-    private String port = "8888";
+    private String port = "3306";
     private String username = "root";
     private String dbname = "cbscalendar";
     private String password = "";

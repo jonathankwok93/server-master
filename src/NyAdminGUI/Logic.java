@@ -25,10 +25,10 @@ public class Logic {
 
 	public static boolean createUser(String username, String password, String passwordRepeat) throws SQLException 
 	{
-		//System.out.println("inden i logic.createUser");
+		System.out.println("inden i logic.createUser");
 		SwitchMethods SW = new SwitchMethods();
-		//System.out.println("Efter switch method");
-		//System.out.println("Efter SW.createuser");
+		System.out.println("Efter switch method");
+		System.out.println("Efter SW.createuser");
 		if(password.equals(passwordRepeat))
 		{
 			SW.createuser(username, password);
