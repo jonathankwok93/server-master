@@ -23,16 +23,17 @@ public class TCPClient {
 		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 //		byte[] input = gsonString.getBytes();
 		byte[] input = testString.getBytes();
-//		System.out.println("Hvad er input?       " + input);
+		System.out.println("Hvad er input?   " + input);
+		System.out.println("Hvad er input?       " + input);
 		byte key = (byte) 3.1470;
-//		System.out.println("Hvad er key?         " + key);
+		System.out.println("Hvad er key?         " + key);
 		byte[] encrypted = input;
-//		System.out.println("Hvad er encrypted?   " + encrypted);
+		System.out.println("Hvad er encrypted?   " + encrypted);
 		for (int i = 0; i < encrypted.length; i++)
 			encrypted[i] = (byte) (encrypted[i] ^ key);
-//		byte[] input = testString.getBytes();
-//		System.out.println("Hvad er encrypted?2   " + encrypted);
-		outToServer.write(encrypted);
+		byte[] input2 = testString.getBytes();
+		System.out.println("Hvad er encrypted?2   " + encrypted);
+		outToServer.write(input);
 //		outToServer.write(input);
 //		System.out.println("Hvad er encrypted?3  " + encrypted);
 		outToServer.flush();
