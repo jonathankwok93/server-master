@@ -28,13 +28,9 @@ public class ClientWorker {
 			DataOutputStream outToClient = 
 			new DataOutputStream(connectionSocketConnected.getOutputStream());
 			
-			String hvadFanden = encryption.decrypt(b);
-			System.out.println("hvadFanden: " + hvadFanden);
-			String hvadSkalDerSke2 = GS.GiantSwitchMethod(hvadFanden);
-			System.out.println("Prøver at printe hvadSkalDerSke2: " + hvadSkalDerSke2);
-//			String hvadSkalDerSke = GS.GiantSwitchMethod(encryption.decrypt(b));
-//			System.out.println("Prøver at printe hvadSkalDerSke: " + hvadSkalDerSke);
-			byte [] output = hvadSkalDerSke2.getBytes();
+			String inputFromClientDecrypted = encryption.decrypt(b);
+			String outputToClient = GS.GiantSwitchMethod(inputFromClientDecrypted);
+			byte [] output = outputToClient.getBytes();
 			byte key = (byte) 3.1470;
 			byte[] encrypted = output;
 			for (int i =0; i<encrypted.length; i++)
@@ -42,10 +38,7 @@ public class ClientWorker {
 				encrypted[i] = (byte) (encrypted[i] ^ key);
 			}
 			outToClient.write(encrypted);
-//			outToClient.writeBytes(hvadSkalDerSke2);
-//			outToClient.writeBytes(hvadSkalDerSke2);
-//			outToClient.writeBytes(GS.GiantSwitchMethod(encryption.decrypt(b)));
-			System.out.println("Sending reply to client");
+			System.out.println("Sending reply to client...");
 		}catch(Exception e){
 			e.printStackTrace();
 			}

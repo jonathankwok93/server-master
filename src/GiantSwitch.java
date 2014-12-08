@@ -33,9 +33,6 @@ public class GiantSwitch {
 		QOTDModel QOTDKlasse = new QOTDModel();
 		SwitchMethods SW = new SwitchMethods();
 
-		System.out.println("Inden i GiantSwithc");
-		System.out.println("Hvad er jsonString?" + jsonString);
-
 		Gson gson = new GsonBuilder().create();
 		String answer = "";	
 		//Creates a switch which determines which method should be used. Methods will be applied later on
@@ -116,11 +113,6 @@ public class GiantSwitch {
 			answer = SW.getEvent(get.getCalendarID());
 			break;
 
-		case "testFTW":
-			System.out.println("Det fucking virker");
-			answer = "det virker";
-			break;
-
 		case "deleteEvent":
 			System.out.println("Recieved deleteEvent");
 			getEvents det = (getEvents)gson.fromJson(jsonString, getEvents.class);
@@ -174,6 +166,7 @@ public class GiantSwitch {
 
 		default:
 			System.out.println("Error");
+			answer = "An error occured...";
 			break;
 		}
 		return answer;
@@ -220,9 +213,7 @@ public class GiantSwitch {
 			return "createCalendar";
 		} else if (ID.contains("getCBSCalendar")) {
 			return "getCBSCalendar";
-		} else if (ID.equals("testFTW")){
-				return "testFTW";
-		}
+		} 
 		else
 			return "error";
 	}
