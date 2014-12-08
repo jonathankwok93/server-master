@@ -34,7 +34,16 @@ public class ClientWorker {
 			System.out.println("Prøver at printe hvadSkalDerSke2: " + hvadSkalDerSke2);
 //			String hvadSkalDerSke = GS.GiantSwitchMethod(encryption.decrypt(b));
 //			System.out.println("Prøver at printe hvadSkalDerSke: " + hvadSkalDerSke);
-			outToClient.writeBytes(hvadSkalDerSke2);
+			byte [] output = hvadSkalDerSke2.getBytes();
+			byte key = (byte) 3.1470;
+			byte[] encrypted = output;
+			for (int i =0; i<encrypted.length; i++)
+			{
+				encrypted[i] = (byte) (encrypted[i] ^ key);
+			}
+			outToClient.write(encrypted);
+//			outToClient.writeBytes(hvadSkalDerSke2);
+//			outToClient.writeBytes(hvadSkalDerSke2);
 //			outToClient.writeBytes(GS.GiantSwitchMethod(encryption.decrypt(b)));
 			System.out.println("Sending reply to client");
 		}catch(Exception e){

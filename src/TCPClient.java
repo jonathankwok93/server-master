@@ -35,7 +35,9 @@ public class TCPClient {
 		byte[] encrypted = input;
 		System.out.println("Hvad er encrypted?   " + encrypted);
 		for (int i = 0; i < encrypted.length; i++)
+		{
 			encrypted[i] = (byte) (encrypted[i] ^ key);
+		}
 //		byte[] input2 = testString.getBytes();
 		outToServer.write(input);
 //		outToServer.write(input);
