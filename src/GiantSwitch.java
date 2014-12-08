@@ -21,9 +21,9 @@ import com.google.gson.*;
 import databaseMethods.SwitchMethods;
 
 public class GiantSwitch {
-	
-	
-	
+
+
+
 	public String GiantSwitchMethod(String jsonString) throws SQLException {
 
 		//Events eventsKlasse = new Events(0, 0, 0, jsonString, jsonString, jsonString, jsonString, jsonString);
@@ -32,7 +32,7 @@ public class GiantSwitch {
 		//ForecastModel forecastKlasse = new ForecastModel();
 		QOTDModel QOTDKlasse = new QOTDModel();
 		SwitchMethods SW = new SwitchMethods();
-		
+
 		Gson gson = new GsonBuilder().create();
 		String answer = "";	
 		//Creates a switch which determines which method should be used. Methods will be applied later on
@@ -47,46 +47,46 @@ public class GiantSwitch {
 			System.out.println("Recieved importCourse");
 			break;
 
-		/**********
-		 ** LOGIN **
-		 **********/
+			/**********
+			 ** LOGIN **
+			 **********/
 		case "logIn":
 			AuthUser authuser = (AuthUser)gson.fromJson(jsonString, AuthUser.class);
-			
+
 			try{
 				answer = SW.authenticate(authuser.getAuthUserEmail(), authuser.getAuthUserPassword(), authuser.getAuthUserIsAdmin());
 			}catch (Exception e){
 				e.printStackTrace(); 
 			}
-			
+
 			break;
 
 		case "logOut":
 			//System.out.println("Recieved logOut");
-			
+
 			//Ikke nødvendig, da det kun er for admin
 			break;
 
-		/*************
-		 ** CALENDAR **
-		 *************/
+			/*************
+			 ** CALENDAR **
+			 *************/
 		case "createCalendar":
-		//	CreateCalender CC = (CreateCalender)gson.fromJson(jsonString, CreateCalender.class);
-		//	System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
-		//	answer = SW.createNewCalendar(CC.getUserName(), CC.getCalendarName(), CC.getPublicOrPrivate());
+			//	CreateCalender CC = (CreateCalender)gson.fromJson(jsonString, CreateCalender.class);
+			//	System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
+			//	answer = SW.createNewCalendar(CC.getUserName(), CC.getCalendarName(), CC.getPublicOrPrivate());
 			break;
-		
+
 		case "deleteCalendar":
 			DeleteCalendar DC = (DeleteCalendar)gson.fromJson(jsonString, DeleteCalendar.class);
 			System.out.println(DC.getCalendarName()+ "Den har lagt det nye ind i klassen");
 			answer = SW.deleteCalendar(DC.getUserName(), DC.getCalendarName());
 			break;
-		
+
 		case "saveImportedCalendar":
-			
-			
+
+
 			break;
-			
+
 		case "getCalendar":
 			System.out.println("Recieved getCalendar");
 			CalendarInfo ci = (CalendarInfo)gson.fromJson(jsonString, CalendarInfo.class);
@@ -110,19 +110,19 @@ public class GiantSwitch {
 		case "getEventInfo":
 			System.out.println("Recieved getEventInfo");
 			getEvents get = (getEvents)gson.fromJson(jsonString, getEvents.class);
-		    answer = SW.getEvent(get.getCalendarID());
+			answer = SW.getEvent(get.getCalendarID());
 			break;
-		
+
 		case "testFTW":
 			System.out.println("Det fucking virker");
-		    answer = "det virker";
+			answer = "det virker";
 			break;
-			
+
 		case "deleteEvent":
 			System.out.println("Recieved deleteEvent");
 			getEvents det = (getEvents)gson.fromJson(jsonString, getEvents.class);
 			answer = Integer.toString((int) SW.deleteEvent(det.geteventID())).toString();
-		
+
 		case "saveNote":
 			System.out.println("Recieved saveNote");
 			break;
@@ -130,14 +130,14 @@ public class GiantSwitch {
 		case "getNote":
 			System.out.println("Recieved getNote");
 			break;
-			
+
 		case "deleteNote":
 			System.out.println("Recieved deleteNote");
 			break;
 
-		/**********
-		 ** QUOTE **
-		 **********/
+			/**********
+			 ** QUOTE **
+			 **********/
 		case "getQuote":
 
 			try {
@@ -147,25 +147,34 @@ public class GiantSwitch {
 				e.printStackTrace();
 			}
 			System.out.println(answer);
-			
+
 			break;
 
-		/************
-		 ** WEATHER **
-		 ************/
+			/************
+			 ** WEATHER **
+			 ************/
 
 		case "getClientForecast":
 			System.out.println("Recieved getClientForecast");
 			ForecastTest forecast = new ForecastTest();
-		//	answer = forecast.getForecast();
+			//	answer = forecast.getForecast();
 			break;
-		
+
+		case "getCBSCalendar":
+			System.out.println("Recieved getCBSCalendar");
+			try{
+				GetCalendarData GCD = new GetCalendarData();
+				GCD.getDataFromCalendar("kakw13ab");
+			}catch(Exception e){
+				e.printStackTrace();	
+			}
+
 		default:
 			System.out.println("Error");
 			break;
 		}
 		return answer;
-		
+
 	}
 
 	//Creates a loooong else if statement, which checks the JSon string which keyword it contains, and returns the following 
@@ -206,11 +215,11 @@ public class GiantSwitch {
 			return "deleteEvent"; 
 		} else if (ID.contains("createCalendar")) {
 			return "createCalendar";
-		}
-
-		else
+		} else if (ID.contains("getCBSCalendar")) {
+			return "getCBSCalendar";
+		} else
 			return "error";
 	}
-	
+
 
 }
