@@ -19,7 +19,7 @@ class TCPServer
 			System.out.println("IP: " + connectionSocket.getLocalAddress() + " has connected to the server");
 			//Runs runForrestRun-method in the ClientWorker class
 			ClientWorker client = new ClientWorker(connectionSocket);
-			client.runForrestRun();
+			client.incomingMessage();
 		}		
 	}
 } 

@@ -7,17 +7,15 @@ import java.net.Socket;
 public class ClientWorker {
 
 	private Socket connectionSocketConnected;
-	private CalendarInfo calendarinto = new CalendarInfo();
 	private GiantSwitch GS = new GiantSwitch();
 	private Encryption encryption = new Encryption();
-	private String incomingJson;
 	
 	ClientWorker(Socket connectionSocket){
 		connectionSocketConnected = connectionSocket;
 		
 	}
 	
-	public void runForrestRun(){
+	public void incomingMessage(){
 		try{
 			System.out.println("Detecting incoming client message...");
 			byte[] b = new byte [50000];
