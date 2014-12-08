@@ -7,7 +7,6 @@ public class test {
 
 	
 	public static void main (String [] args) throws Exception{
-<<<<<<< Updated upstream
 		
 //		GetCalendarData GCD = new GetCalendarData();
 //		GCD.getDataFromCalendar("kakw13ab");
@@ -15,12 +14,10 @@ public class test {
 		GiantSwitch GS = new GiantSwitch();
 		String quote = GS.GiantSwitchMethod("getQuote");
 		System.out.println(quote);
-=======
 	
 		GetCalendarData GCD = new GetCalendarData();
 		GCD.getDataFromCalendar("kakw13ab");
 
->>>>>>> Stashed changes
 	}
 
 }

@@ -2,15 +2,6 @@ import java.sql.SQLException;
 
 
 
-
-<<<<<<< Updated upstream
-=======
-
-
-
-
-
->>>>>>> Stashed changes
 import model.Forecast.ForecastModel;
 import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
