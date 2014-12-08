@@ -21,7 +21,7 @@ public class Encryption {
 			b[i] = (byte)(b[i]^ff);
 		}
 		String encrypted = new String(b).trim();
-		System.out.println("encrypted: " + encrypted);
+		System.out.println("encrypted11: " + encrypted);
 		return encrypted;
 	}
 }

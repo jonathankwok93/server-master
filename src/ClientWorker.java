@@ -8,7 +8,7 @@ public class ClientWorker {
 
 	private Socket connectionSocketConnected;
 	private CalendarInfo calendarinto = new CalendarInfo();
-	private GiantSwitch swi = new GiantSwitch();
+	private GiantSwitch GS = new GiantSwitch();
 	private Encryption encryption = new Encryption();
 	private String incomingJson;
 	
@@ -28,7 +28,14 @@ public class ClientWorker {
 			DataOutputStream outToClient = 
 			new DataOutputStream(connectionSocketConnected.getOutputStream());
 			
-			outToClient.writeBytes(swi.GiantSwitchMethod(encryption.decrypt(b)));
+			String hvadFanden = encryption.decrypt(b);
+			System.out.println("hvadFanden: " + hvadFanden);
+			String hvadSkalDerSke2 = GS.GiantSwitchMethod(hvadFanden);
+			System.out.println("Prøver at printe hvadSkalDerSke2: " + hvadSkalDerSke2);
+//			String hvadSkalDerSke = GS.GiantSwitchMethod(encryption.decrypt(b));
+//			System.out.println("Prøver at printe hvadSkalDerSke: " + hvadSkalDerSke);
+			outToClient.writeBytes(hvadSkalDerSke2);
+//			outToClient.writeBytes(GS.GiantSwitchMethod(encryption.decrypt(b)));
 			System.out.println("Sending reply to client");
 		}catch(Exception e){
 			e.printStackTrace();

@@ -33,6 +33,9 @@ public class GiantSwitch {
 		QOTDModel QOTDKlasse = new QOTDModel();
 		SwitchMethods SW = new SwitchMethods();
 
+		System.out.println("Inden i GiantSwithc");
+		System.out.println("Hvad er jsonString?" + jsonString);
+
 		Gson gson = new GsonBuilder().create();
 		String answer = "";	
 		//Creates a switch which determines which method should be used. Methods will be applied later on
@@ -177,7 +180,7 @@ public class GiantSwitch {
 
 	}
 
-	//Creates a loooong else if statement, which checks the JSon string which keyword it contains, and returns the following 
+	//Creates a loooong if else statement, which checks the JSon string which keyword it contains, and returns the following 
 	//keyword if
 	public String Determine(String ID) {
 
@@ -217,7 +220,10 @@ public class GiantSwitch {
 			return "createCalendar";
 		} else if (ID.contains("getCBSCalendar")) {
 			return "getCBSCalendar";
-		} else
+		} else if (ID.equals("testFTW")){
+				return "testFTW";
+		}
+		else
 			return "error";
 	}
 
