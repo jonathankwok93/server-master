@@ -13,7 +13,7 @@ import JsonClasses.*;
 public class TCPClient {
 	
 	public static void main (String [] args) throws Exception{
-		System.out.println(toServer("kjd"));
+		System.out.println(toServer("logIn;INDSÆTBRUGER; INDSÆTKODE"));
 	}
 	
 	
