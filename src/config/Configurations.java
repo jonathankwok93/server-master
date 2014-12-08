@@ -123,7 +123,7 @@ public class Configurations {
         JSONParser jsonParser = new JSONParser();
 
         try {
-            FileReader json = new FileReader("src/config.json");
+            FileReader json = new FileReader("src/config-dist.json");
 
             Object obj = jsonParser.parse(json);
             JSONObject jsonObject = (JSONObject) obj;
