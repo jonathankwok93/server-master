@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -11,13 +12,17 @@ import JsonClasses.*;
 
 public class TCPClient {
 	
+	public static void main (String [] args) throws Exception{
+		System.out.println(toServer("kjd"));
+	}
 	
-	public static void main(String[] args) throws Exception {
+	
+	public static String toServer(String sendToServer) throws Exception {
 		Encryption decryption = new Encryption();
 
-		String sendToServer = "Hvad vil du gerne sende til serveren?";
+		//sendToServer = "getCBSCalendar";
 		
-		Socket clientSocket = new Socket("localhost", 8888);
+		Socket clientSocket = new Socket("172.17.146.119", 8888);
 		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 		DataInputStream inFromServer = new DataInputStream(clientSocket.getInputStream());
 		
@@ -39,7 +44,8 @@ public class TCPClient {
 		String answerFromServerDecrypted = decryption.decrypt(b);
 		System.out.println("FROM SERVER: " + answerFromServerDecrypted);
 		clientSocket.close();
+		return answerFromServerDecrypted;
+		
 	}
-	
-	
+		
 }

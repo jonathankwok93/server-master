@@ -2,6 +2,7 @@ import java.sql.SQLException;
 
 
 
+
 import model.Forecast.ForecastModel;
 import model.Forecast.ForecastTest;
 import model.QOTD.QOTDModel;
@@ -24,7 +25,7 @@ public class GiantSwitch {
 
 
 
-	public String GiantSwitchMethod(String jsonString) throws SQLException {
+	public String GiantSwitchMethod(String jsonString) throws Exception {
 
 		//Events eventsKlasse = new Events(0, 0, 0, jsonString, jsonString, jsonString, jsonString, jsonString);
 
@@ -37,6 +38,7 @@ public class GiantSwitch {
 		String answer = "";	
 		//Creates a switch which determines which method should be used. Methods will be applied later on
 		switch (Determine(jsonString)) {
+		//switch (jsonString){
 		//If the Json String contains one of the keywords below, run the relevant method.
 
 		/************
@@ -152,23 +154,23 @@ public class GiantSwitch {
 		case "getClientForecast":
 			System.out.println("Recieved getClientForecast");
 			ForecastTest forecast = new ForecastTest();
-			//	answer = forecast.getForecast();
+			answer = ForecastTest.getTodayForecast();
 			break;
 
 		case "getCBSCalendar":
 			System.out.println("Recieved getCBSCalendar");
-			try{
+			
 				GetCalendarData GCD = new GetCalendarData();
-				GCD.getDataFromCalendar("kakw13ab");
-			}catch(Exception e){
-				e.printStackTrace();	
-			}
-
+				answer = GCD.getDataFromCalendar("kakw13ab");
+				break;
+			
 		default:
 			System.out.println("Error");
 			answer = "An error occured...";
+			
 			break;
 		}
+		System.out.println("Giantswitch sender " + answer + " tilbage igen");
 		return answer;
 
 	}
