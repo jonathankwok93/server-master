@@ -13,7 +13,7 @@ import JsonClasses.*;
 public class TCPClient {
 	
 	public static void main (String [] args) throws Exception{
-		System.out.println(toServer("logIn;INDSÆTBRUGER; INDSÆTKODE"));
+		System.out.println(toServer("logIn;JonathanErVirkeligSej;1234"));
 	}
 	
 	
@@ -22,7 +22,7 @@ public class TCPClient {
 
 		//sendToServer = "getCBSCalendar";
 		
-		Socket clientSocket = new Socket("172.17.146.119", 8888);
+		Socket clientSocket = new Socket("localhost", 8888);
 		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 		DataInputStream inFromServer = new DataInputStream(clientSocket.getInputStream());
 		

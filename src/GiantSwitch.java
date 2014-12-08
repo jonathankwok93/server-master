@@ -54,9 +54,10 @@ public class GiantSwitch {
 			 ** LOGIN **
 			 **********/
 		case "logIn":
-			AuthUser authuser = (AuthUser)gson.fromJson(jsonString, AuthUser.class);
+//			AuthUser authuser = (AuthUser)gson.fromJson(jsonString, AuthUser.class);
 //			Syntax: "logIn;userName;password
-			
+			System.out.println("Inde i logIn funktionen");
+
 			
 			String[] stringSplittedLogIn = jsonString.split(";");
 			String caseNameLogIn = stringSplittedLogIn[0];
@@ -76,11 +77,11 @@ public class GiantSwitch {
 			System.out.println("0=godtkendt\n1=email findes ikke\n2=bruger er inaktiv\n3 password er forkert\n4 Brugertype stemmer ikke overens");
 			
 			
-			try{
-				answer = SW.authenticate(authuser.getAuthUserEmail(), authuser.getAuthUserPassword(), authuser.getAuthUserIsAdmin());
-			}catch (Exception e){
-				e.printStackTrace(); 
-			}
+//			try{
+//				answer = SW.authenticate(authuser.getAuthUserEmail(), authuser.getAuthUserPassword(), authuser.getAuthUserIsAdmin());
+//			}catch (Exception e){
+//				e.printStackTrace(); 
+//			}
 
 			break;
 
