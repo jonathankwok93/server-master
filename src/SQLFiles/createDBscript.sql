@@ -100,14 +100,10 @@ CREATE TABLE IF NOT EXISTS users
 
 /* Create Dummy Account */
 
-INSERT INTO `cbscalendar`.`users`
-(`email`,
-`active`,
-`password`)
-VALUES
-("admin@admin.dk",
-true,
-"d6YSr320JnLXlp8YYxUcNQ==");
+INSERT INTO `cbscalendar`.`users` (`email`,`active`,`password`)VALUES("admin@admin.dk",true,"d6YSr320JnLXlp8YYxUcNQ==");
+INSERT INTO `cbscalendar`.`users` (`email`, `active`, `password`) VALUES ('casv13ad', '1', '1234');
+INSERT INTO `cbscalendar`.`users` (`email`, `active`, `password`) VALUES ('kakw13ab', '1', '1234');
+INSERT INTO `cbscalendar`.`users` (`email`, `active`, `password`) VALUES ('pani13ac', '1', '1234');
 
 
 

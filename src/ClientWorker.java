@@ -49,7 +49,7 @@ public class ClientWorker {
 	public void incomingMessage(){
 		try{
 			System.out.println("Detecting incoming client message...");
-			byte[] b = new byte [50000];
+			byte[] b = new byte [250000];
 			int count = connectionSocketConnected.getInputStream().read(b);
 			DataInputStream bias = 
 			new DataInputStream(connectionSocketConnected.getInputStream());
