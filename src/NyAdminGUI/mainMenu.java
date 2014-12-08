@@ -25,7 +25,7 @@ public class mainMenu extends JFrame {
 	public mainMenu() {
 		
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -75,10 +75,6 @@ public class mainMenu extends JFrame {
 		});
 		btnLogout.setBounds(327, 443, 117, 29);
 		contentPane.add(btnLogout);
-		
-		JButton btnNoteList = new JButton("Notes list");
-		btnNoteList.setBounds(315, 152, 117, 29);
-		contentPane.add(btnNoteList);
 		
 		JButton btnViewAllEvents = new JButton("View all events");
 		btnViewAllEvents.addMouseListener(new MouseAdapter() {
@@ -140,6 +136,17 @@ public class mainMenu extends JFrame {
 		lblAdministratorMenu.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblAdministratorMenu.setBounds(6, 35, 167, 16);
 		contentPane.add(lblAdministratorMenu);
+		
+		JButton btnCreateCalendar = new JButton("Create Calendar");
+		btnCreateCalendar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				createCalendar cal = new createCalendar();
+				cal.setVisible(true);
+			}
+		});
+		btnCreateCalendar.setBounds(248, 152, 184, 29);
+		contentPane.add(btnCreateCalendar);
 		
 
 	}

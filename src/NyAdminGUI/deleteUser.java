@@ -54,7 +54,7 @@ public class deleteUser extends JFrame {
 		lblSearchEvent.setBounds(20, 70, 130, 20);
 		contentPane.add(lblSearchEvent);
 
-		JButton btnSearch = new JButton("Delete user");
+		JButton btnSearch = new JButton("Destroy user");
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent r){
