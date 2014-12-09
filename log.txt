@@ -1,0 +1,512 @@
+commit c0d1096971fcb4bf4e73990bad6e59233719e258
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Tue Dec 9 01:35:28 2014 +0100
+
+    Adgangskode nu aktiv igen
+    
+    -
+
+commit d37ad65afcfd06a5965d0bd5d8395569937fcf46
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Tue Dec 9 01:22:09 2014 +0100
+
+    Oprydning i kode
+    
+    -
+
+commit e9a70ecc151a3bc496f23888aadccb4d8146dac2
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Tue Dec 9 01:02:42 2014 +0100
+
+    Påbegyndt oprydning i kode
+    
+    -
+
+commit fe720e85b281f7f3886be0ab17d89145779892ad
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Tue Dec 9 01:02:06 2014 +0100
+
+    oprydning
+
+commit d779ce8382c28cc6c633a44bd208d7f444cb6d4e
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Tue Dec 9 00:25:04 2014 +0100
+
+    Tilføjet vores brugernavne til createdatabase sql
+
+commit b9222780d5adafa5bca38b15190c43a259cc259a
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 21:35:26 2014 +0100
+
+    Fikset login metode
+    
+    -
+
+commit 108214dd2280c47f43806f6bd514b6e61cc3ec9e
+Author: pawnielsen <pawnielsen94@gmail.com>
+Date:   Mon Dec 8 21:23:10 2014 +0100
+
+    Fikset login funktion
+
+commit 81a3bb7f56d56ac78ee5f455250def17504d1305
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 18:38:19 2014 +0100
+
+    Fikset github problemer
+
+commit b2181a8ca0df4f98db1e9261b51027e10c41724a
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 18:36:01 2014 +0100
+
+    Fikset fejl
+    
+    Adminbugeren kunne ikke udføre funktionen. Genskrevet dem der var
+    problemer med. Hardcoded database navnet ind i executemetoden.
+
+commit 68106ec420413f36779cc325b329756b089a1ab3
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 8 18:33:28 2014 +0100
+
+    Rettelser til at kommunikerer med klient
+    
+    -
+
+commit 6a9f4b5160ba4d7674e7fa75c5a923cfbc6ca17b
+Author: pawnielsen <pawnielsen94@gmail.com>
+Date:   Mon Dec 8 12:24:57 2014 +0100
+
+    Tilføjet admin klassen createCalendar
+    
+    -
+
+commit aa0cf2fc35538a708a30bd34437c31cc9a74b217
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 12:19:11 2014 +0100
+
+    Fixed configurations
+    
+    Pege på den rigtige config-fil
+
+commit 2fb8f27f518edbb86ae1d1b5671328794fedd49d
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 12:02:25 2014 +0100
+
+    Ændret navn på metode
+
+commit 08dbc38d000a7928f526e001b72320060a35c4dd
+Author: pawnielsen <pawnielsen94@gmail.com>
+Date:   Mon Dec 8 11:30:28 2014 +0100
+
+    Server/klient kode er blevet ryddet op
+
+commit 44672e046b1a342edbd3c24b9ff57207e1ab3f67
+Author: pawnielsen <pawnielsen94@gmail.com>
+Date:   Mon Dec 8 11:00:57 2014 +0100
+
+    Krypteret forbindelse virker
+    
+    Skal til at rydde op i koden
+
+commit 9361acd61768fcc2d6061d33288df5b578cc4a0f
+Author: pawnielsen <pawnielsen94@gmail.com>
+Date:   Mon Dec 8 10:53:02 2014 +0100
+
+    Work i progress, forbindelse server/klient
+    
+    Klienten kan sende krypteret til serveren.
+    Serveren kan sende ukrypteret til klienten.
+
+commit 82ffac74d31d47ca320d4aa7d4605068ff99364d
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 8 09:55:06 2014 +0100
+
+    Fikset forbindelse mellem client og server
+
+commit 91a9406416423a945ca9cf477f3a1265ef97b166
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 8 09:49:08 2014 +0100
+
+    Oprettet Json og metode i GiantSwitch
+    
+    Til getCBSCalendar
+
+commit 1ac4108cb65f33457959fbe656e2f6cafc7bd66d
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 8 09:34:48 2014 +0100
+
+    Blokken med tekst back for more!
+    
+    -
+
+commit 172317af21a990cc5d665948b051dab3e9a3559d
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sun Dec 7 23:38:32 2014 +0100
+
+    Sidste ændringer, kan stadig ikke sortere i events
+    
+    -
+
+commit 4251a0a2029493a40c7b2b165b4b16f1d2f7ccf5
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sun Dec 7 23:03:01 2014 +0100
+
+    Kan (næsten) sortere i de afhentet events
+    
+    Yes baby, i said that.
+
+commit bb87f08035d66f1add5e0ad111b9c27e7f9c9372
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 22:03:55 2014 +0100
+
+    Færdigsynkronisering
+
+commit 9f9f8026553e4d68d873e3d59b35fb7e51be8a11
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sun Dec 7 21:34:11 2014 +0100
+
+    Kan nu dynamisk hente kalenderevent med userID
+    
+    -
+
+commit ad642a37571f97c1678511a54cb810617123d3f8
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sun Dec 7 21:26:09 2014 +0100
+
+    Kan nu importere fra calendar.cbs.dk
+    
+    - KØR FRA TEST KLASSEN FOR AT IMPORTERE!
+
+commit ec6c3a53a0d5bd1f88b2269669221959639e3cc2
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 21:02:24 2014 +0100
+
+    Fikset skrivefejl
+
+commit c68cb186a3ee7500759bc7d02e92739e92dfce76
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 20:40:35 2014 +0100
+
+    Rettet encryption, startet forbindelse
+
+commit 9ea0e11951c70af7e9414c169612ba3c8a38bcbb
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 17:16:18 2014 +0100
+
+    Diverse
+
+commit 96b4b776e0b58e05dab1842ba1579fefd10b8a87
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 13:22:06 2014 +0100
+
+    Småting
+
+commit e6bc89ae4182633a57efc88d3f6df57f7fff2590
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 12:40:15 2014 +0100
+
+    Rydet op i koden
+
+commit 9fd5f686f8969672f0e3297f58eefb98a545cd12
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sun Dec 7 11:31:04 2014 +0100
+
+    Slette bruger er fikset, og virker nu
+
+commit 559740beec219b591b275ce38c57941b70baee95
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 21:10:49 2014 +0100
+
+    Sidste commit for aftenen!
+
+commit 6d6d10f66e4832654e0c5789cff94cdf4cee4580
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 16:13:06 2014 +0100
+
+    Småting
+
+commit 202115c0050ce84fc62e55e7496e15048711a631
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 15:25:55 2014 +0100
+
+    Fjernet diverse fejl, og ryddet op i koden
+
+commit 2cb89a9b85992f2d699f58fbdecc5ad20acec5b7
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 15:24:16 2014 +0100
+
+    Færdiggjort showAllUsers
+
+commit b2532a55ff62582b87650e650ed748ea518ed441
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sat Dec 6 14:42:11 2014 +0100
+
+    Rettet main metode, Switchmethods, deleteUser
+    
+    From DITLAB with love
+
+commit 5ac8a78de7609bb87084a19818fd3f1011b83116
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 14:12:45 2014 +0100
+
+    Færdiggjort userlist udskrift
+
+commit 5a70be58db984bcf063fffbcc3edabb541138400
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 13:23:32 2014 +0100
+
+    Små rettelser
+
+commit a9d123c38b5b92c00d6bdd24031513495ced180a
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Sat Dec 6 12:58:14 2014 +0100
+
+    Tilføjet userlist klasse
+    
+    Så kan man udskrive alle users fra admin gui
+
+commit 49bd98a5090d0498628ab3d2cfef871266954efc
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sat Dec 6 11:07:34 2014 +0100
+
+    Et par rettelser
+    
+    -
+
+commit 581fce44236b87d538d04ba73a1a73304442526a
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sat Dec 6 10:41:42 2014 +0100
+
+    Man kan nu fjerne bruger
+    
+    -
+
+commit bfdad91c024ed95c530619453c8aaae928918d96
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Sat Dec 6 01:13:55 2014 +0100
+
+    Mindre rettelser
+    
+    -
+
+commit 7d14afa268349e0f03fcf7c46407fd1bdd5b2513
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Fri Dec 5 22:48:12 2014 +0100
+
+    Fjernet unødvendig main metode
+    
+    TCP server starter nu op sammen med Main metoden
+
+commit d9b8a25bac4adf1781cb2dae9b7a8f599ee28f09
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Fri Dec 5 20:32:23 2014 +0100
+
+    Tilføjet dummy account og test klasse
+    
+    -
+
+commit 774db78d105b79b7accfa8024a285920de099f28
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Fri Dec 5 17:28:06 2014 +0100
+
+    Serveren kører nu uden at crashe
+    
+    Der er i hvert fald ikke nogen kendte fejl (endnu)
+
+commit c595fc6ea93b86de98ab42d0f997630013ea7da8
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Fri Dec 5 15:45:27 2014 +0100
+
+    Fixet forbindelse til db
+    
+    - Admin kan nu oprette bruger
+    - Crasher nu ikke længere ved opstart
+
+commit b1019670084b977e0947948b996ebc6b6493553a
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Fri Dec 5 15:23:02 2014 +0100
+
+    Ændringer ifh. porte og sql
+    
+    .
+
+commit af0f196be1ec74c453f2db446415edc7cd12e15a
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Thu Dec 4 19:40:55 2014 +0100
+
+    Oprettet klassen igen
+
+commit e846a548d6ea45fb13e4b16b8a57c0b2f6e62f5c
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 19:40:42 2014 +0100
+
+    -
+    
+    -
+
+commit 53f0bf3a9eb4b95624610d3042835024b81d0bdb
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Thu Dec 4 19:40:05 2014 +0100
+
+    Slettet klasse
+
+commit 50615baaa1630ac08d257a29ad20591b7bbdab30
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 19:20:05 2014 +0100
+
+    Ændret port fra 8888 til 3306
+    
+    -
+
+commit 58d212b0f75c89ff4d9136586d3f2d6b567df23c
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Thu Dec 4 19:01:35 2014 +0100
+
+    Rettet flere calender
+
+commit bd686c942bb58a84e7f6e8711b673d4f8890d5ee
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Thu Dec 4 18:48:53 2014 +0100
+
+    Rettet calendar til calendar
+
+commit 9e19a3839cae42ef1e17a31f37f9194a0bcd3b17
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 18:47:54 2014 +0100
+
+    Rettet calendar til calendar
+    
+    -
+
+commit e3e9c12b819b86fd8ae2ee2d989ef9a607540a2b
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Thu Dec 4 18:41:38 2014 +0100
+
+    Diverse rettelser
+
+commit d6cc6dc630daad54d0d94188ed7edc68273664af
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 15:05:22 2014 +0100
+
+    Fixet bug
+    
+    -
+
+commit 81df365c84629fb706ab0f87a9ea55f4397a0a60
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 14:39:32 2014 +0100
+
+    Administrator menuen åbnes nu automatisk
+    
+    -
+
+commit 676508864f6f0af3d4353118555608a0d24a7979
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Thu Dec 4 14:35:12 2014 +0100
+
+    Main metode ændret
+    
+    Nu sat til at åbne den nye administrator GUI.
+
+commit 8888e0928902f5a9cdcaade9de9ff1f22f821a01
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Wed Dec 3 20:29:59 2014 +0100
+
+    Smårettelser
+
+commit 49a998f02273d2222d45bbe62b81b50eebd13bb2
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Wed Dec 3 19:36:31 2014 +0100
+
+    Tilføjet loginfunktion i Giantswitch
+    
+    -
+
+commit f9af2db434ca6b390b768c828efa70bc81af2a84
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Wed Dec 3 09:21:17 2014 +0100
+
+    Diverse
+
+commit 018e7d69d5f88f4c7c85c9c9e2ab6a6d55476c33
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Tue Dec 2 16:08:55 2014 +0100
+
+    ClientWorker burde nu virke
+    
+    -
+
+commit 438ea6b8d1f562d2f9bc004b6ad8faad5d707f29
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 1 17:39:39 2014 +0100
+
+    Tilføjet ufærdig ClientWorker
+    
+    -
+
+commit 14de14c5fe05ad5e36e571ddf867dc0cc8d8af47
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 1 17:38:36 2014 +0100
+
+    Fikset krypteringsnøgle
+
+commit 4e86ffbf6687bacf70e02dae34e4a9b04ae48263
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 1 14:20:17 2014 +0100
+
+    Mindre ændringer i Giantswitch
+    
+    createEvent virker af en ukendt årsag stadig ikke?
+
+commit 0219b37b79b601e9dbdb1b741aab947b677101d6
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 1 14:19:31 2014 +0100
+
+    Diverse småting
+
+commit 802261a3eaccd03a2e1f2cb50a6d065b46f96e18
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 1 13:41:49 2014 +0100
+
+    Tilføjelser i GiantSwitch
+    
+    case “getEvents” virker stadig ikke
+    Vejrservice kan pt. kun hente vejret for idag
+
+commit 776f790c92035e1f44ac9c2deb9fd1bbf9ef7c20
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 1 12:49:04 2014 +0100
+
+    diverse ændringer
+    
+    -
+
+commit 89ebc9df8f44c86da2c6bb18d7f0ba58dd1ca7f2
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 1 12:24:37 2014 +0100
+
+    Ændringer i QOTD og AuthenticateUser
+    
+    QOTD virker, men AuthenticateUser virker stadig ikke
+
+commit d39a9297ffcbdb47882db4dafaa871f7f5136be4
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 1 12:23:17 2014 +0100
+
+    Oprettelse af brugere i databasen
+    
+    Work in progress
+    Diverse ændringer
+
+commit 47c586080960e2f6339fffc054de1cd2c893029e
+Author: CSvaneborg <c.svaneborg@gmail.com>
+Date:   Mon Dec 1 10:38:36 2014 +0100
+
+    Rettet fejlkoder og arbejder på GUI
+
+commit 29855e23e7ae86cd4241457d2fba216f863f7851
+Author: jonathankwok93 <iamjonathankwok@gmail.com>
+Date:   Mon Dec 1 10:23:42 2014 +0100
+
+    Import af Server V3
+    
+    -
