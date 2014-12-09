@@ -1,7 +1,7 @@
 import NyAdminGUI.runAdmin;
 import config.Configurations;
 
-public class Main {
+public class MainMetode {
 	
 	public static void main(String[] args) {
 		Configurations cf = new Configurations();

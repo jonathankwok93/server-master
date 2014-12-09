@@ -1,7 +1,5 @@
 package NyAdminGUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,12 +12,10 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 
-import databaseMethods.SwitchMethods;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class createUser extends JFrame {
 
