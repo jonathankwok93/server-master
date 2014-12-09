@@ -51,7 +51,7 @@ public class SwitchMethods extends Model
 
 		return users;
 	}
-	
+
 	public ArrayList getAllActiveUsers() throws SQLException
 	{
 		ArrayList<UserActive> usersActive = new ArrayList<UserActive>();;
@@ -64,9 +64,9 @@ public class SwitchMethods extends Model
 		return usersActive;
 	}
 
-	
-	
-	
+
+
+
 
 	public int deleteNote(int noteID) throws SQLException{
 		try{
@@ -106,8 +106,8 @@ public class SwitchMethods extends Model
 
 	public boolean createuser(String userName, String password)throws SQLException{
 		System.out.println("boolean createuser i SwithcMethods");
-		String[] keys = {"email", "active", "password"}; //Der i DB at der skal oprettes
-		String[] values = {userName, "1", password}; //De v��rdier der skal oprettes med
+		String[] keys = {"email", "active", "password"}; 
+		String[] values = {userName, "1", password}; 
 		if(qb.insertInto("users", keys).values(values).Execute()){
 			System.out.println("true ftw");
 			return true;
@@ -126,7 +126,7 @@ public class SwitchMethods extends Model
 		if (resultSet.next()){
 			reply = resultSet.getString("eventID");
 
-			reply = resultSet.getString("eventID"); //eventid =  row indeks?
+			reply = resultSet.getString("eventID"); 
 			reply += resultSet.getString("type");
 			reply += resultSet.getString("createdby");
 			reply += resultSet.getString("startTime");
@@ -200,7 +200,6 @@ public class SwitchMethods extends Model
 		resultSet= qb.selectFrom("calendar").where("name", "=", newCalendarName).ExecuteQuery();
 		System.out.println("testing1.1.4");
 
-		//("select * from test.calendar where Name = '"+newCalendarName+"';");
 		while(resultSet.next())
 		{
 			authenticate = true;
@@ -219,8 +218,6 @@ public class SwitchMethods extends Model
 		qb.update("calendar", keys, values).all().Execute();
 		System.out.println("testing1.2.3");
 
-
-		//		doUpdate("insert into test.calendar (Name, Active, CreatedBy, PrivatePublic) VALUES ('"+newCalendarName+"', '1', '"+userName+"', '"+publicOrPrivate+"');");
 	}
 	/**
 	 * Allows the client to delete a calendar
@@ -244,7 +241,6 @@ public class SwitchMethods extends Model
 		String calendarExists = "";
 		resultSet = qb.selectFrom("Calendar").where("Name", "=", calendarName).ExecuteQuery();
 
-		//				("select * from calendar where Name = '"+calendarName+"';");
 		while(resultSet.next())
 		{
 			calendarExists = resultSet.toString();
@@ -281,8 +277,6 @@ public class SwitchMethods extends Model
 		return stringToBeReturend;
 	}
 
-
-	// Metoden faar email og password fra switchen (udtrukket fra en json) samt en boolean der skal saettes til true hvis det er serveren der logger paa, og false hvis det er en klient
 	/**
 	 * Allows the client to log in
 	 * @param email
@@ -297,16 +291,12 @@ public class SwitchMethods extends Model
 
 		qb = new QueryBuilder();
 
-		// Henter info om bruger fra database via querybuilder
 		resultSet = qb.selectFrom(keys, "users").where("email", "=", email).ExecuteQuery();
 
-		// Hvis en bruger med forespurgt email findes
 		if (resultSet.next()){
 
-			// Hvis brugeren er aktiv
 			if(resultSet.getInt("active")==1)
 			{					
-				// Hvis passwords matcher
 				if(resultSet.getString("password").equals(password))
 				{
 					int userID = resultSet.getInt("userid");
@@ -315,21 +305,20 @@ public class SwitchMethods extends Model
 
 					resultSet = qb.selectFrom(key, "roles").where("userid", "=", new Integer(userID).toString()).ExecuteQuery();
 
-					// Hvis brugeren baade logger ind og er registreret som admin, eller hvis brugeren baade logger ind og er registreret som bruger
 					if((true))
 					{
-						return "0"; // returnerer "0" hvis bruger/admin er godkendt
+						return "0"; 
 					} else {
-						return "4"; // returnerer fejlkoden "4" hvis brugertype ikke stemmer overens med loginplatform
+						return "4"; 
 					}
 				} else {
-					return "3"; // returnerer fejlkoden "3" hvis password ikke matcher
+					return "3"; 
 				}
 			} else {
-				return "2"; // returnerer fejlkoden "2" hvis bruger er sat som inaktiv
+				return "2"; 
 			}
 		} else {
-			return "1"; // returnerer fejlkoden "1" hvis email ikke findes
+			return "1"; 
 		}
 	}
 }

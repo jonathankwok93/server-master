@@ -2,15 +2,6 @@ package model.note;
 
 import java.sql.SQLException;
 
-/*
- * 		Mangler:
- * 			- Identifikation p� brugeren der har lavet noten
- * 			- Hvem der skal kunne redigere noten
- * 			- Mulighed for at slette / redigere noter
- * 			- Active Status
- * 
- * 			ETA: 2 timer
- */
 
 public class NoteModel {
 	

@@ -7,8 +7,6 @@ import java.io.*;
 import java.sql.*;
 
 
-/**
- * model.Model superclass, never instansiated. All child model classes inherits its properties, classes and methods */
 	public abstract class Model {
 
     private static Configurations cf = new Configurations();
@@ -29,7 +27,7 @@ import java.sql.*;
      * @param
      */
     public static void setSelectedDatabase(String db) {
-        if (db != null && db.length() > 0) { //Overwrite default
+        if (db != null && db.length() > 0) { 
             sqlUrl += db;
         }
     }
@@ -90,7 +88,7 @@ import java.sql.*;
 
             getConnection(false);
 
-            if (getConn().isValid(5)) //5 seconds
+            if (getConn().isValid(5)) 
                 return true;
 
         } catch (SQLException e) {
@@ -111,12 +109,11 @@ import java.sql.*;
             ex.printStackTrace();
         }
 
-        //luk forbindelser
         finally {
             if (getStmt() != null) {
                 try {
                     getStmt().close();
-                } catch (SQLException sqlEx) {  //ignore
+                } catch (SQLException sqlEx) { 
                     setStmt(null);
                 }
             }
@@ -157,13 +154,9 @@ import java.sql.*;
     		setConn(DriverManager.getConnection(sqlUrl, sqlUser, sqlPasswd));
     	}else{
         	System.out.println("testetetetett" + "SQL-url: " + sqlUrl + "    dbName:" + dbName + "       sqlUser: " + sqlUser + "       sqlPasswd:" + sqlPasswd );
-    		// Hardcoded database navn, username og kode. 	
-//        	setConn(DriverManager.getConnection(sqlUrl+"/"+dbName, sqlUser, sqlPasswd));
+    		
         	setConn(DriverManager.getConnection(sqlUrl + dbName, sqlUser, sqlPasswd));
 
-        	//setConn(DriverManager.getConnection("jdbc:mysql://localhost:3306","root" , ""));
-
-//    		System.out.println("DONE DONE DONE");
     	}
     }
 

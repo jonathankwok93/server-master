@@ -141,8 +141,7 @@ public class Execute extends Model {
         	System.out.println("getWhereKey: " );
         	System.out.println("1" + getQueryBuilder().getTableName());
         	System.out.println("2" + getQueryBuilder().getFields());
-//        	System.out.println("3" + getWhere().getWhereKey());
-//        	System.out.println("4" + getWhere().getWhereOperator());
+
         	sql = UPDATE + getQueryBuilder().getTableName() + " SET " + getQueryBuilder().getFields() + "'" + WHERE + getWhere().getWhereKey() + "' " + getWhere().getWhereOperator() + " ?;";
         	System.out.println("testing1.3.2");
         	try {
@@ -164,12 +163,8 @@ public class Execute extends Model {
         	System.out.println("her burde sql stå2: " + sql);
             StringBuilder sb = new StringBuilder();
             System.out.println("hvad er sb??? " + sb);
-//            getValues().getValues();
             String[] comeon = getValues().getValues();
-//            System.out.println(comeon[0]);
-//            System.out.println(comeon[1]);
-//            System.out.println(comeon[2]);
-//            System.out.println(comeon.length);
+
             for(int i =0; comeon.length>i;i++ )
             {
             	System.out.println(comeon[i]);
@@ -182,43 +177,16 @@ public class Execute extends Model {
 
                 }
             }
-            System.out.println("Nu burde værdier være blevet skrevet ud!");
-//            for (String n : getValues().getValues())
-//            {
-//                if (sb.length() > 0) sb.append(',');
-//                sb.append(" ?");
-//            }
-
-
-            
-            System.out.println("Hvad er sb???" + sb);
-            System.out.println("Hvad er sblength???" + sb.length());
-
-//            System.out.println("Hvad er n???" + n);
             
             System.out.println("Hvad er getValues???" + getValues().getValues());
 
-//            sql += sb.toString();
             sql += ");";
-            System.out.println("færdig sql string: " + sql);
             try {
-                System.out.println("hejjjjj1");
             	getConnection(false);
-                System.out.println("hejjjjj2");
                 getConn();
-                System.out.println("hejjjjj3");
                 String cleanSql = StringEscapeUtils.escapeSql(sql);
 
                 sqlStatement = getConn().prepareStatement(cleanSql);
-
-//                int x = 0;
-//                for (int i = 0; i < getValues().getValues().length; i++) {
-//                    x = i;
-//                    System.out.println("Hvad er det endelige statement?" + sqlStatement);
-//                    sqlStatement.setString(x+1, getValues().getValues()[i]);
-//                    System.out.println(sqlStatement);
-//                }
-
 
             	} 
             catch (SQLException e) 

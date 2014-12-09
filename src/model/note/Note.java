@@ -34,10 +34,7 @@ public class Note extends Model{
 
 		public int DeleteNote (int noteID) throws SQLException 
 		{
-			//operatationCode fortæller hvilken handling der blev udført
-			// 0 = ingen handling blev gennemført
-			// 1 = noten blev slettet med succes
-			// 2 = der var en fejl, og noten blev ikke slettet
+		
 			int operationCode = 0;			
 			
 			try

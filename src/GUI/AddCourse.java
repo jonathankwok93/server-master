@@ -35,10 +35,7 @@ import java.awt.Dimension;
 		private final JButton btnMainMenu = new JButton("Main Menu");
 		private final JButton btnLogout = new JButton("Log out");
 
-		/**
-		 * Create the panel.
-		 */
-		
+	
 		public AddCourse() {
 			setAlignmentY(Component.BOTTOM_ALIGNMENT);
 			setSize(new Dimension(1366, 768));
@@ -55,7 +52,6 @@ import java.awt.Dimension;
 			add(lblUpcomingEvent);
 
 			
-			//Laver tabellen inde i Eventlisten.
 			String[] columnNames = { "Course", "Place", "Time", "" };
 
 			Object[][] data = {

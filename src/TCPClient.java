@@ -12,11 +12,6 @@ import JsonClasses.*;
 
 public class TCPClient {
 	
-	public static void main (String [] args) throws Exception{
-		System.out.println(toServer("logIn;JonathanErVirkeligSej;1234"));
-	}
-	
-	
 	public static String toServer(String sendToServer) throws Exception {
 		Encryption decryption = new Encryption();
 

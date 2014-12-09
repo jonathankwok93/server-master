@@ -22,7 +22,6 @@ public class Events {
 			ResultSet rs = qb.selectFrom("events").all().ExecuteQuery();
 			while (rs.next())
 			{
-				//String values from SQL database (must be created)
 				int eventID = rs.getInt("eventid");
 				int type = rs.getInt("type");
 				int location = rs.getInt("location");
@@ -70,7 +69,6 @@ public class Events {
         this.events = event;
     }
     
-    // Konverterer array events til en tekst streng
     @Override
     public String toString() {
         return Arrays.toString(events.toArray());

@@ -14,7 +14,8 @@ public class Main {
 			System.err.print(e);
 		}
 		cf.ReadFile();
-		
+		new runAdmin().run();
+
 		try{
 			TCPServer TCPS = new TCPServer();
 			TCPS.TCPRun();
@@ -22,7 +23,6 @@ public class Main {
 			
 		}
 		System.out.println(cf.getPassword());
-		new runAdmin().run();
 		
 	}		
 }

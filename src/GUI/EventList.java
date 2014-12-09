@@ -62,11 +62,11 @@ import java.awt.event.ActionEvent;
 
 			Object[][] data = {
 
-					{ "DØK Julefrokost", "11.11.2022", "Game on!", new Boolean(false) },
-					{ "DØK Julefrokost", "11.11.2022", "Game on!", new Boolean(true) },
-					{ "DØK Julefrokost", "11.11.2022", "Game on!", new Boolean(false) },
-					{ "DØK Julefrokost", "11.11.2022", "Game on!", new Boolean(true) },
-					{ "DØK Julefrokost", "11.11.2022", "Game on!", new Boolean(false) } };
+					{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!", new Boolean(false) },
+					{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!", new Boolean(true) },
+					{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!", new Boolean(false) },
+					{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!", new Boolean(true) },
+					{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!", new Boolean(false) } };
 
 			final JTable table = new JTable(data, columnNames);
 			table.setSurrendersFocusOnKeystroke(true);
@@ -74,7 +74,6 @@ import java.awt.event.ActionEvent;
 			table.setFillsViewportHeight(true);
 			table.setRowSelectionAllowed(true);
 
-			// Create the scroll pane and add the table to it.
 			JScrollPane scrollPane = new JScrollPane(table);
 			scrollPane.setBorder(new CompoundBorder(new BevelBorder(
 					BevelBorder.LOWERED, new Color(0, 0, 205), new Color(255, 255,
@@ -86,7 +85,6 @@ import java.awt.event.ActionEvent;
 					null));
 			scrollPane.setBounds(387, 194, 591, 361);
 
-			// Add the scroll pane to this panel.
 			add(scrollPane);
 			
 			JButton btnMainMenu = new JButton("Main Menu");

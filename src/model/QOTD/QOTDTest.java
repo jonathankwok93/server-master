@@ -10,7 +10,6 @@ public class QOTDTest {
 		try {
 			qotd.getQuote();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

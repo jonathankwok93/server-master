@@ -17,7 +17,6 @@ public class GetCalendarData {
 	EncryptUserID e = new EncryptUserID();
 
 
-	//henter data fra URL og l??er ind til en string
 	private static String readUrl(String urlString) throws Exception {
 		BufferedReader reader = null;
 		try {
@@ -50,28 +49,10 @@ public class GetCalendarData {
 		
 		String userID = username;
 		String json = readUrl("http://calendar.cbs.dk/events.php/"+ userID +"/"+e.getKey(userID)+".json");
-		//String json = readUrl("http://calendar.cbs.dk/events.php/caha13ag/02a24d4e002e6e3571227c39e2f63784.json");
 		Gson gson = new Gson();
 		Events events = gson.fromJson(json, Events.class); 
 
 		return json;
-		
-		//Printe
-//		System.out.println(json);
-		
-		//		
-		//		for(int i = 0; i < events.getEvents().size(); i++){
-		//			
-		//			
-		//			System.out.print(events.getEvents().get(i).getDescription());
-		//			System.out.print(events.getEvents().get(i).getType());
-		//			System.out.print(events.getEvents().get(i).getLocation());
-		//			System.out.print(events.getEvents().get(i).getStart());
-		//			System.out.print(events.getEvents().get(i).getEnd());
-		//			System.out.println();
-
-
-
 
 	}
 }

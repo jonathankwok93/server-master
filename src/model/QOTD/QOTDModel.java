@@ -78,7 +78,6 @@ public class QOTDModel {
     			
     	
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -99,18 +98,16 @@ public class QOTDModel {
   	
   	
   	 public void updateQuote(){
-	     	Date date = new Date(); // Current date & time
-	     	long maxTimeNoUpdate = 86400; // Maximum one day with no update
+	     	Date date = new Date(); 
+	     	long maxTimeNoUpdate = 86400; 
 	     	
 	     	long date1 = date.getTime();
-	     	long date2 = date.getTime() - maxTimeNoUpdate; // minus 1 hour -- should be fetched from database
+	     	long date2 = date.getTime() - maxTimeNoUpdate; 
 	     	
 	     	long timeSinceUpdate = date1 - date2; 
+	
 	     	
-	     	
-	     	// if more than 1 hour ago, do update
 	     	if(timeSinceUpdate > 864000){
-	     		// return fresh weather data
 	     		saveQuote();	
 	     	} 
 	     }

@@ -101,8 +101,7 @@ public class AddEventGUI extends JPanel {
 		btnSubmit.setFont(new Font("Arial", Font.BOLD, 30));
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			//Submit changes to databases
-			//hvad sker der n�r �ndringer ved en bruger submittes
+		
 			}
 		}
 		);
@@ -172,10 +171,7 @@ public class AddEventGUI extends JPanel {
 								lblType.setFont(new Font("Arial", Font.BOLD, 26));
 								lblType.setBounds(483, 471, 159, 31);
 								add(lblType);
-						//=======
-						
-						//>>>>>>> FETCH_HEAD
-								
+					
 								JLabel lblBackground = new JLabel("");
 								lblBackground.setSize(new Dimension(1366, 768));
 								lblBackground.setIcon(new ImageIcon(UserInfo.class.getResource("/Images/MetalBackground.jpg")));

@@ -17,20 +17,12 @@ public class Configurations {
     private String dbname = "cbscalendar";
     private String password = "";
 
-    // FFkey is used in Encryption.java
     private String ffcryptkey = "3.1470";
-    
-    
-    
-    // Weather variables
+  
     private String weather_expiration_time;
     private String weather_lat;
     private String weather_lon;
     private String weather_future_in_days;
-
-    // Opret DB name
-    // Opret update time på QOTD
-
 
     public String getHost() {
         return host;

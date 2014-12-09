@@ -20,9 +20,6 @@ public class deleteEvent extends JFrame {
 	private JTextField textField;
 
 
-	/**
-	 * Create the frame.
-	 */
 	public deleteEvent() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 550, 700);
@@ -35,8 +32,7 @@ public class deleteEvent extends JFrame {
 		btnRemoveEvent.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			//searchresult.getSelecetedIndex();
-			//Logic.removeEvent(removeEventID)	<-- Method missing for removing event
+			
 			dispose();
 			}
 		});
@@ -58,7 +54,6 @@ public class deleteEvent extends JFrame {
 		
 		String [] columnNames = {"Event Name", "Created by"};
 		
-		//DB should fill the table with data
 		Object data [][] = {
 				{"Distributed Systems eksamen", "Henrik Thorn"},
 				{"Cafe Nexus", "Jonathan Kwok"},
