@@ -96,20 +96,10 @@ public class mainMenu extends JFrame {
 				deleteuser.setVisible(true);
 			}
 		});
-		btnDeleteUser.setBounds(6, 152, 117, 29);
+		btnDeleteUser.setBounds(6, 111, 117, 29);
 		contentPane.add(btnDeleteUser);
 		
-		JButton btnDeleteEvent = new JButton("Delete event");
-		btnDeleteEvent.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				deleteEvent deleteevent = new deleteEvent();
-				deleteevent.setVisible(true);
-			}
-		});
-		btnDeleteEvent.setBounds(6, 111, 117, 29);
-		contentPane.add(btnDeleteEvent);
-		
+
 		JButton btnChangePassword = new JButton("Change password");
 		btnChangePassword.addMouseListener(new MouseAdapter() {
 			@Override

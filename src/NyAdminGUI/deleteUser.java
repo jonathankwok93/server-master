@@ -77,47 +77,7 @@ public class deleteUser extends JFrame {
 		
 		btnSearch.setBounds(226, 93, 206, 29);
 		contentPane.add(btnSearch);
-		
-		JLabel lblCreateCalendar = new JLabel("Create name");
-		lblCreateCalendar.setBounds(20, 170, 130, 20);
-		contentPane.add(lblCreateCalendar);
-
-		textCalendarName = new JTextField("Name of calendar to create:");
-		textCalendarName.setBounds(140, 170, 375, 30);
-		contentPane.add(textCalendarName);
-		textCalendarName.setColumns(10);
-		
-		JButton btnCreateCalendar = new JButton("Create calendar");
-		btnCreateCalendar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e){
-				String calendarName = textCalendarName.getText();
-				String Active = "1";
-				String CreatedBy = "Admin";
-				String PrivatePublic = "1";
-
-				System.out.println("Nu er vi nået til else-metoden");
-				QueryBuilder qb = new QueryBuilder();
-				String[] kolonner = { "Name", "CreatedBy", "PrivatePublic", "Active", };
-				String[] Values = { calendarName, CreatedBy, PrivatePublic, Active};
-				try {
-					qb.insertInto("Calendar", kolonner ).values(Values).Execute();
-
-					System.out.println("Calendar has been succesfully added!");
-
-
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
-		btnCreateCalendar.setBounds(226, 200, 206, 29);
-		contentPane.add(btnCreateCalendar);
-		
-
-
-	
+			
 		JButton btnReturnToMenu = new JButton("Return to menu");
 		btnReturnToMenu.addMouseListener(new MouseAdapter() {
 			@Override
