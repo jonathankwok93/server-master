@@ -115,12 +115,8 @@ public class GiantSwitch {
 			String[] kolonner = { "Name","Active", "CreatedBy", "PrivatePublic"};
 			String[] newValues = { calendarName,active, createdBy, privatePublic};
 			
-			System.out.println("So far so good.");
 			try 
 			{
-				System.out.println("Can calendar be added?");
-				System.out.println();
-//				Values.setValues(newValues);
 				qb.insertInto("Calendar", kolonner ).values(newValues).Execute();
 				System.out.println("Calendar has been succesfully added!");
 
@@ -128,11 +124,8 @@ public class GiantSwitch {
 			} 
 			catch (SQLException e1) 
 			{
-				System.out.println("Damn, missed.");
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			System.out.println("Wuuu");
 			
 			//	CreateCalender CC = (CreateCalender)gson.fromJson(jsonString, CreateCalender.class);
 			//	System.out.println(CC.getCalendarName()+ "Den har lagt det nye ind i klassen");
@@ -234,8 +227,6 @@ public class GiantSwitch {
 
 	}
 
-	//Creates a loooong if else statement, which checks the JSon string which keyword it contains, and returns the following 
-	//keyword if
 	public String Determine(String ID) {
 
 		if (ID.contains("getEvents")) {

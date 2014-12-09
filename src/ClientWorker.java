@@ -49,7 +49,11 @@ public class ClientWorker {
 	public void incomingMessage(){
 		try{
 			System.out.println("Detecting incoming client message...");
+<<<<<<< Updated upstream
 			byte[] b = new byte [250000];
+=======
+			byte[] b = new byte [500000];
+>>>>>>> Stashed changes
 			int count = connectionSocketConnected.getInputStream().read(b);
 			DataInputStream bias = 
 			new DataInputStream(connectionSocketConnected.getInputStream());
@@ -58,13 +62,11 @@ public class ClientWorker {
 			new DataOutputStream(connectionSocketConnected.getOutputStream());
 			
 			String inputFromClientDecrypted = encryption.decrypt(b);
-//<<<<<<< Updated upstream
 			System.out.println(inputFromClientDecrypted);
 			
 			System.out.println("Print besked: " + inputFromClientDecrypted);
-//=======
 			System.out.println("input til servere er: " + inputFromClientDecrypted);
-//>>>>>>> Stashed changes
+
 			String outputToClient = GS.GiantSwitchMethod(inputFromClientDecrypted);
 			byte [] output = outputToClient.getBytes();
 			byte key = (byte) 3.1470;

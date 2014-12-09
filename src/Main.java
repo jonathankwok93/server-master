@@ -15,6 +15,12 @@ public class Main {
 		}
 		cf.ReadFile();
 		
+		try{
+			TCPServer TCPS = new TCPServer();
+			TCPS.TCPRun();
+		}catch(Exception e){
+			
+		}
 		System.out.println(cf.getPassword());
 		new runAdmin().run();
 		
