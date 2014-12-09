@@ -146,8 +146,6 @@ public class GiantSwitch {
 			break;
 
 		case "saveImportedCalendar":
-
-
 			break;
 
 		case "getCalendar":
