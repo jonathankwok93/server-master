@@ -76,17 +76,6 @@ public class mainMenu extends JFrame {
 		btnLogout.setBounds(327, 443, 117, 29);
 		contentPane.add(btnLogout);
 		
-		JButton btnViewAllEvents = new JButton("View all events");
-		btnViewAllEvents.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				viewAllEvents viewAllEvents = new viewAllEvents();
-				viewAllEvents.setVisible(true);
-			}
-		});
-		btnViewAllEvents.setBounds(6, 70, 117, 29);
-		contentPane.add(btnViewAllEvents);
-		
 		JButton btnCreateUser = new JButton("Create user");
 		btnCreateUser.addMouseListener(new MouseAdapter() {
 			@Override
@@ -145,7 +134,7 @@ public class mainMenu extends JFrame {
 				cal.setVisible(true);
 			}
 		});
-		btnCreateCalendar.setBounds(248, 152, 184, 29);
+		btnCreateCalendar.setBounds(6, 70, 184, 29);
 		contentPane.add(btnCreateCalendar);
 		
 

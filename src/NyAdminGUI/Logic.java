@@ -15,7 +15,7 @@ public class Logic {
 
 	public static boolean authenticateAdmin(String password){
 
-		if (true){//password.equals(pswd)){ 
+		if (password.equals(pswd)){ 
 			return true;
 		}else{
 			return false;
