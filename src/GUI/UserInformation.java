@@ -1,7 +1,6 @@
 package GUI;
 
-// Fig. 28.30: Person.java
-// Person class that represents an entry in an address book.
+
 public class UserInformation
 {
   
@@ -9,12 +8,9 @@ public class UserInformation
    private String password;
   
 
-   // no-argument constructor
    public UserInformation()
    {
-   } // end no-argument Person constructor
-
-   // constructor
+   } 
    public UserInformation(  String user, String pass )
    {
 	   

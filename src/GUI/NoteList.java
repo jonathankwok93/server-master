@@ -2,10 +2,8 @@ package GUI;
 
 import javax.swing.JPanel;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
@@ -30,10 +28,6 @@ public class NoteList extends JPanel {
 	private JButton btnLogout;
 	private JLabel label;
 	
-
-	/**
-	 * Create the panel.
-	 */
 	public NoteList() {
 		setSize(new Dimension(1366, 768));
 		setLayout(null);
@@ -43,11 +37,11 @@ public class NoteList extends JPanel {
 
 		Object[][] data = {
 
-				{ "DØK Julefrokost", "11.11.2022", "Game on!","3"},
-				{ "DØK Julefrokost", "11.11.2022", "Game on!","3"},
-				{ "DØK Julefrokost", "11.11.2022", "Game on!","3"},
-				{ "DØK Julefrokost", "11.11.2022", "Game on!","3" },
-				{ "DØK Julefrokost", "11.11.2022", "Game on!","3" } 
+				{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!","3"},
+				{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!","3"},
+				{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!","3"},
+				{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!","3" },
+				{ "Dï¿½K Julefrokost", "11.11.2022", "Game on!","3" } 
 				};
 
 		final JTable table = new JTable(data, columnNames);

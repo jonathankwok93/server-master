@@ -2,38 +2,28 @@
 
 	import javax.swing.JPanel;
 
+
 	import java.awt.Dimension;
 
 	import javax.swing.JLabel;
 	import javax.swing.ImageIcon;
 	import javax.swing.JTable;
-	import javax.swing.JTextField;
-
 	import java.awt.Font;
 
-	import javax.swing.SwingConstants;
 	import javax.swing.JButton;
 
 	import java.awt.Color;
 
 	import javax.swing.JScrollPane;
 
-	import java.awt.Component;
-
 	import javax.swing.border.CompoundBorder;
 	import javax.swing.border.BevelBorder;
 	import javax.swing.border.MatteBorder;
-	import javax.swing.JTextPane;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+	import java.awt.event.ActionListener;
 
 
 	public class EventList extends JPanel {
 
-		/**
-		 * Create the panel.
-		 */
-		
 		private JButton btnAdd;
 		private JButton btnDelete;
 		private JButton btnLogout;
